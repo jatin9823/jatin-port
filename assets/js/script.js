@@ -106,12 +106,18 @@ if (localStorage.getItem("theme") === "light_theme") {
 
 
 
-const scriptURL = '<https://script.google.com/macros/s/AKfycbyqxh01yjBMZR-TVW7O9UjRK2MGhPo_N0zXGp9BkXdt_VT6h6IC8Nxu2Z4Vo8jpI8Qy/exec>'
-  const form = document.forms['submit-to-google-sheet']
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzzdwhU0UOP4_KsZnYSVICbue98D85_C7Z0GqNiw5L9ghQWiqLm5sxsjkwRhWgnhMHz/exec';
+const form = document.forms['contact-form'];
 
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+            console.log('Success!', response);
+            alert('Form submitted successfully!');
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            alert('Error submitting the form. Please try again.');
+        });
+});
