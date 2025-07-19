@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Open Source Journey</title>
+    <style>
+        :root {
+            --primary: #6e5494;
+            --secondary: #4078c0;
+            --accent: #bd2c00;
+            --light: #f5f5f5;
+            --dark: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(110, 84, 148, 0.05) 0%, rgba(110, 84, 148, 0.05) 90%),
+                radial-gradient(circle at 90% 80%, rgba(64, 120, 192, 0.05) 0%, rgba(64, 120, 192, 0.05) 90%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+        
+        .contribution {
+            padding: 20px 40px;
+            position: relative;
+            background-color: white;
+            width: 50%;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .contribution:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .contribution::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            top: 30px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .content {
+            padding: 20px;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .date {
+            color: var(--accent);
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: rgba(189, 44, 0, 0.1);
+            border-radius: 20px;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .achievement {
+            display: inline-block;
+            background-color: rgba(110, 84, 148, 0.1);
+            color: var(--primary);
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .links {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .links a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .badges {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        
+        .badges h2 {
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .badge {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .badge:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .badge img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+        }
+        
+        .badge::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0.3),
+                rgba(255, 255, 255, 0)
+            );
+            transform: rotate(30deg);
+            transition: all 0.5s;
+        }
+        
+        .badge:hover::before {
+            transform: rotate(30deg) translate(20%, 20%);
+        }
+        
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .nav-container {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-item {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+        
+        @media screen and (max-width: 768px) {
+            .timeline::before {
+                left: 31px;
+            }
+            
+            .contribution {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .contribution::after {
+                left: 21px;
+            }
+            
+            .left::after, .right::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+    <div class="nav-container">
+    <a href="index.html" class="nav-item">Home</a>
+    <a href="index.html#contact" class="nav-item">Contact</a>
+</div>
+
+</head>
+<body>
+    
+    <div class="particles" id="particles-js"></div>
+    
+    <div class="container">
+        <header>
+            <h1>My Open Source Journey</h1>
+            <p class="subtitle">Contributing to the community, one pull request at a time</p>
+             
+        </header>
+        
+        <div class="timeline">
+            <div class="contribution left">
+                <div class="content">
+                    <div class="date">October 2023</div>
+                    <h2>Hacktoberfest Debut</h2>
+                    <p>My first major open source participation in Hacktoberfest. Contributed to multiple repositories, fixed bugs, and added new features.</p>
+                    <div class="achievement">4+ PRs Merged</div>
+                    <div class="achievement">First Swag Earned</div> <br>
+                    <a href="https://www.holopin.io/@jatin009v#badges" target="_blank">Hacktoberfest Profile</a>
+                </div>
+            </div>
+            
+            <div class="contribution right">
+                <div class="content">
+                    <div class="date">October 2024</div>
+                    <h2>Hacktoberfest Return</h2>
+                    <p>Participated again with more experience, making higher quality contributions. Focused on documentation improvements and beginner-friendly issues.</p>
+                    <div class="achievement">8+ PRs Merged</div>
+                    <div class="achievement">Maintainer Appreciations</div>
+                    <br>
+                    <a href="https://www.holopin.io/@jatin009v#badges" target="_blank">Hacktoberfest Profile</a>
+                </div>
+            </div>
+            
+            <div class="contribution left">
+                <div class="content">
+                    <div class="date">October 2024</div>
+                    <h2>Hack AI DevFest</h2>
+                    <p>During Hacktoberfest, also participated in the Hack AI DevFest event. Contributed to AI/ML projects and earned recognition for quality contributions.</p>
+                    <div class="achievement">Ranked #13 Overall</div>
+                    <div class="achievement">₹5000+ in Swags</div> <br>
+                     <a href="https://devfest.ai/leaderboard/cm1ndf5tp000ge04c2ujgzlm6" target="_blank">DevFest Achievements (click Here)</a>
+                </div>
+            </div>
+             <div class="contribution right">
+                <div class="content">
+                    <div class="date">01 Oct - 31 2024</div>
+                    <h2> GirlScript Summer of Code 2024 - Extended Edition! </h2>
+                    <p>This is an incredible opportunity to make a meaningful impact and learn from some of the brightest minds in tech. 🌟 <br>
+Eager to contribute to exciting projects and help bring innovative ideas to life! </p>
+                  
+                     <a href="https://www.linkedin.com/posts/jatingupta09_opensource-gssoc2024-girlscript-activity-7246891865017360384-D5up?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEFRdG0B4_NO7tpQcG58r8W_l0KOMeSoZAg" target="_blank">GSOC (click Here)</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="links">
+            <p>Check out my contributions :</p>
+            <a href="https://github.com/jatin009v/" target="_blank">GitHub Profile</a>
+            <a href="https://www.holopin.io/@jatin009v#badges" target="_blank">Hacktoberfest Profile</a>
+            <a href="https://devfest.ai/leaderboard/cm1ndf5tp000ge04c2ujgzlm6" target="_blank">DevFest Achievements</a>
+        </div>
+        
+        <div class="badges">
+            <h2>Earned Badges</h2>
+            <div class="badge-container">
+                <div class="badge">
+                    <img src="https://assets.holopin.io/eyJidWNrZXQiOiJob2xvcGluLWFzc2V0cyIsImtleSI6ImFzc2V0cy9jbDd0ZDhncDUwMTMyMDlrMHd1OHFlNHg5IiwiZWRpdHMiOnsicm90YXRlIjpudWxsfX0=" alt="Hacktoberfest 2023">
+                </div>
+                <div class="badge">
+                    <img src="https://assets.holopin.io/eyJidWNrZXQiOiJob2xvcGluLWFzc2V0cyIsImtleSI6ImFzc2V0cy9jbG16MW5neWQwMjM3bTN6am50c2V6Yng2IiwiZWRpdHMiOnsicm90YXRlIjpudWxsfX0=" alt="Hacktoberfest 2024">
+                </div>
+                <div class="badge">
+                    <img src="https://assets.holopin.io/eyJidWNrZXQiOiJob2xvcGluLWFzc2V0cyIsImtleSI6ImFzc2V0cy9jbG15cWdyMGUwMjI1enV6amdxZmYwbmhsIiwiZWRpdHMiOnsicm90YXRlIjpudWxsfX0=" alt="Hacktoberfest 2024">
+                </div>
+                <div class="badge">
+                    <img src="https://assets.holopin.io/eyJidWNrZXQiOiJob2xvcGluLWFzc2V0cyIsImtleSI6ImFzc2V0cy9jbG16YzVpdWYxMDA0ODBma3V6dTBxYnpxOCIsImVkaXRzIjp7InJvdGF0ZSI6bnVsbH19" alt="Hacktoberfest 2024">
+                </div>
+                <div class="badge">
+                    <img src="https://assets.holopin.io/eyJidWNrZXQiOiJob2xvcGluLWFzc2V0cyIsImtleSI6ImFzc2V0cy9jbG16ZXJwM3EzMDUwMGZsZHZ4d2JwZTdhIiwiZWRpdHMiOnsicm90YXRlIjpudWxsfX0=" alt="Hacktoberfest 2024">
+                </div>
+                <div class="badge">
+                    <img src="https://assets.holopin.io/hf2023levels/level0-blue-0-0-0.webp" alt="Hacktoberfest 2024">
+                </div>
+                <div class="badge">
+                    <img src="https://assets.holopin.io/eyJidWNrZXQiOiJob2xvcGluLWFzc2V0cyIsImtleSI6ImFzc2V0cy9jbG5leHg3dmUyMTcxOTN6amp0c2lvNXZqIiwiZWRpdHMiOnsicm90YXRlIjpudWxsfX0=" alt="Hacktoberfest 2024">
+                </div>
+                <div class="badge">
+                    <img src="https://assets.holopin.io/hf2024levels/level0-sloth-code-0-0-0-0.webp" alt="Hacktoberfest 2024">
+                </div>
+                <div class="badge">
+                    <img src="Photos/Contribution-01.jpg" alt="Hacktoberfest 2024">
+                </div>
+                <div class="badge">
+                    <img src="https://devfest.ai/svgs/Logo.svg" alt="Hack AI DevFest">
+                </div>
+                <div class="badge">
+                    <img src="https://devfest.ai/svgs/Swag.svg" alt="Open Source Contributor">
+                </div>
+                <div class="badge">
+                    <img src="https://devfest.ai/_next/image?url=%2Ftickets%2F1.png&w=3840&q=75" alt="Top 15% 2024">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Particles.js configuration
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 60,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#6e5494"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#6e5494",
+                        "opacity": 0.2,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 0.5
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+            
+            // Animate timeline items on scroll
+            const contributions = document.querySelectorAll('.contribution');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateX(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            contributions.forEach((contribution, index) => {
+                contribution.style.opacity = 0;
+                contribution.style.transition = `opacity 0.5s ease ${index * 0.2}s, transform 0.5s ease ${index * 0.2}s`;
+                
+                if (contribution.classList.contains('left')) {
+                    contribution.style.transform = 'translateX(-50px)';
+                } else {
+                    contribution.style.transform = 'translateX(50px)';
+                }
+                
+                observer.observe(contribution);
+            });
+            
+            // Badge hover effect enhancement
+            const badges = document.querySelectorAll('.badge');
+            badges.forEach(badge => {
+                badge.addEventListener('mouseenter', () => {
+                    const randomColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
+                    badge.style.boxShadow = `0 10px 25px ${randomColor}40`;
+                });
+                
+                badge.addEventListener('mouseleave', () => {
+                    badge.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

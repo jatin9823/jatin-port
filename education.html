@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Education - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/css">
+        :root {
+            --primary: #3a86ff;
+            --secondary: #8338ec;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s;
+        }
+        
+        .nav-item:hover {
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 25px;
+            bottom: -45px;
+            width: 1px;
+            background: var(--primary);
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        .education-card {
+            transition: all 0.3s;
+            transform-style: preserve-3d;
+        }
+        
+        .education-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background-color: white; box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);">
+        <nav style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; max-width: 1200px; margin: 0 auto;">
+            <div style="font-size: 1.8rem; font-weight: 700; color: #3a86ff;">
+                <span style="color: #8338ec;">My</span>Education
+            </div>
+            <div style="display: flex; gap: 2rem;">
+                <a href="index.html" class="nav-item" style="color: #333; text-decoration: none; font-weight: 500; transition: all 0.3s; position: relative; padding: 0.5rem 0;">Home</a>
+                <a href="index.html#contact" class="nav-item" style="color: #333; text-decoration: none; font-weight: 500; 
+                transition: all 0.3s; position: relative; padding: 0.5rem 0;">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main style="margin-top: 80px; padding: 4rem 5%; max-width: 1200px; margin-left: auto; margin-right: auto;">
+        <!-- Hero Section -->
+        <section id="home" style="margin-bottom: 5rem; text-align: center;">
+            <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem; background: linear-gradient(to right, #3a86ff, #8338ec); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                My Education Journey
+            </h1>
+            <p style="font-size: 1.2rem; color: #555; max-width: 800px; margin: 0 auto 2rem;">
+                A timeline of my academic achievements and learning experiences
+            </p>
+            
+            <!-- <div style="display: flex; justify-content: center;">
+                <img src="https://placehold.co/800x400" alt="Student studying with laptop and books in a modern library setting with sunlight coming through large windows" style="border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 100%;"/>
+            </div> -->
+        </section>
+
+        <!-- Education Timeline -->
+        <section id="education" style="margin-bottom: 5rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 600; margin-bottom: 2rem; color: var(--primary); text-align: center;">
+                Academic Qualifications
+            </h2>
+            
+            <div style="position: relative; max-width: 800px; margin: 0 auto; padding: 2rem; background-color:
+             white; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.05);">
+                <div class="timeline-item">
+                    <div class="education-card" style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 
+                    0 5px 15px rgba(0,0,0,0.05);">
+                        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                            <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--primary); margin: 0;">Master Of Computer Application</h3>
+                            <span style="background: #e9f5ff; color: var(--primary); padding: 0.3rem 1rem; border-radius: 
+                            20px; font-weight: 500; font-size: 0.9rem;">(Pursuing)-Expected 2027</span>
+                        </div>
+                        <h4 style="font-size: 1.2rem; color: #555; margin: 0.5rem 0;">CSJM University (UIET-IV) Kanpur (U.P.)</h4>
+                        <p style="color: #777; margin: 0.5rem 0 0;">July 2025 - April 2027</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="education-card" style="background: white; padding: 1.5rem; border-radius: 10px; 
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                            <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--primary); margin: 0;">Bachelor of Computer Application</h3>
+                            <span style="background: #e9f5ff; color: var(--primary); padding: 0.3rem 1rem; border-radius: 20px; font-weight: 
+                            500; font-size: 0.9rem;">Completed</span>
+                        </div>
+                        <h4 style="font-size: 1.2rem; color: #555; margin: 0.5rem 0;">CSJM University (UIET-IV) Kanpur (U.P.)</h4>
+                        <p style="color: #777; margin-bottom: 0.3rem;">CGPA: 8.20 / 10</p>
+                         <p style="color: #777; margin: 0.5rem 0 0;">July 2022 - June 2025</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="education-card" style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                            <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--primary); margin: 0;">Class 12th (UP Board)</h3>
+                            <span style="background: #e9f5ff; color: var(--primary); padding: 0.3rem 1rem; border-radius: 20px; font-weight: 500; font-size: 0.9rem;">Completed</span>
+                        </div>
+                        <h4 style="font-size: 1.2rem; color: #555; margin: 0.5rem 0;">Kailas Saraswati Inter College  </h4>
+                           <p style="color: #777; margin: 0.5rem 0 0;">Percentage: 69% | PCM </p>
+                        <p style="color: #777; margin: 0.5rem 0 0;">April 2021 - June 2022 </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="education-card" style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                            <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--primary); margin: 0;">Class 10th (UP Board)</h3>
+                            <span style="background: #e9f5ff; color: var(--primary); padding: 0.3rem 1rem; border-radius: 20px; font-weight: 500; font-size: 0.9rem;">Completed</span>
+                        </div>
+                        <h4 style="font-size: 1.2rem; color: #555; margin: 0.5rem 0;">Kailas Saraswati Inter College</h4>
+                         <p style="color: #777; margin: 0.5rem 0 0;">Percentage: 77%</p>
+                        <p style="color: #777; margin: 0.5rem 0 0;">April 2019 - June 2020</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: #212529; color: white; text-align: center; padding: 2rem 0;">
+        <p style="margin: 0;">© 2023 My Education Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Navigation smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Form input animation
+        document.querySelectorAll('input, textarea').forEach(input => {
+            const underline = input.nextElementSibling;
+            
+            input.addEventListener('focus', () => {
+                underline.style.width = '100%';
+            });
+            
+            input.addEventListener('blur', () => {
+                if (!input.value) {
+                    underline.style.width = '0%';
+                }
+            });
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+            document.querySelectorAll('#contactForm div div').forEach(div => {
+                div.style.width = '0%';
+            });
+        });
+        
+        // Header shadow on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
+
