@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Open Source Journey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #6e5494;
@@ -11,15 +12,18 @@
             --accent: #bd2c00;
             --light: #f5f5f5;
             --dark: #333;
+            --success: #28a745;
+            --super: #ff6b35;
+            --card-bg: #ffffff;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
             background-color: var(--light);
             color: var(--dark);
@@ -28,20 +32,21 @@
                 radial-gradient(circle at 10% 20%, rgba(110, 84, 148, 0.05) 0%, rgba(110, 84, 148, 0.05) 90%),
                 radial-gradient(circle at 90% 80%, rgba(64, 120, 192, 0.05) 0%, rgba(64, 120, 192, 0.05) 90%);
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
             position: relative;
         }
-        
+
         header {
             text-align: center;
             margin-bottom: 3rem;
             position: relative;
+            padding-top: 4rem;
         }
-        
+
         h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
@@ -51,8 +56,18 @@
             color: transparent;
             position: relative;
             display: inline-block;
+            animation: titleGlow 3s ease-in-out infinite alternate;
         }
-        
+
+        @keyframes titleGlow {
+            0% {
+                text-shadow: 0 0 5px rgba(110, 84, 148, 0.2);
+            }
+            100% {
+                text-shadow: 0 0 15px rgba(110, 84, 148, 0.4);
+            }
+        }
+
         h1::after {
             content: '';
             position: absolute;
@@ -64,19 +79,64 @@
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             border-radius: 2px;
         }
-        
+
         .subtitle {
             font-size: 1.2rem;
             color: var(--primary);
             margin-bottom: 2rem;
         }
-        
+
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+
+        .nav-content {
+            display: flex;
+            gap: 2rem;
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 2rem;
+            justify-content: flex-end;
+        }
+
+        .nav-item {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-item:hover {
+            background-color: rgba(110, 84, 148, 0.1);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .nav-item i {
+            font-size: 1.1rem;
+        }
+
         .timeline {
             position: relative;
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .timeline::before {
             content: '';
             position: absolute;
@@ -88,58 +148,72 @@
             margin-left: -3px;
             border-radius: 10px;
         }
-        
+
         .contribution {
             padding: 20px 40px;
             position: relative;
-            background-color: white;
+            background-color: var(--card-bg);
             width: 50%;
             margin-bottom: 30px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            transform: translateY(30px);
         }
-        
+
+        .contribution.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .contribution:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
-        
+
         .contribution::after {
             content: '';
             position: absolute;
             width: 20px;
             height: 20px;
             right: -10px;
-            background-color: white;
+            background-color: var(--card-bg);
             border: 4px solid var(--primary);
             top: 30px;
             border-radius: 50%;
             z-index: 1;
         }
-        
+
         .left {
             left: 0;
         }
-        
+
         .right {
             left: 50%;
         }
-        
+
         .right::after {
             left: -10px;
         }
-        
+
         .content {
             padding: 20px;
         }
-        
+
         h2 {
             color: var(--primary);
             margin-bottom: 10px;
             font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        
+
+        h2 i {
+            color: var(--secondary);
+        }
+
         .date {
             color: var(--accent);
             font-weight: bold;
@@ -149,12 +223,12 @@
             background-color: rgba(189, 44, 0, 0.1);
             border-radius: 20px;
         }
-        
+
         p {
             line-height: 1.6;
             margin-bottom: 15px;
         }
-        
+
         .achievement {
             display: inline-block;
             background-color: rgba(110, 84, 148, 0.1);
@@ -165,12 +239,31 @@
             margin-bottom: 5px;
             font-size: 0.9rem;
         }
-        
+
+        .super-contributor {
+            background-color: rgba(255, 107, 53, 0.1);
+            color: var(--super);
+            border: 1px solid var(--super);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 107, 53, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
+            }
+        }
+
         .links {
             margin-top: 2rem;
             text-align: center;
         }
-        
+
         .links a {
             display: inline-block;
             margin: 0 10px;
@@ -180,35 +273,39 @@
             text-decoration: none;
             border-radius: 5px;
             transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        
+
         .links a:hover {
             background-color: var(--secondary);
             transform: translateY(-2px);
         }
-        
+
         .badges {
             margin-top: 4rem;
             text-align: center;
         }
-        
+
         .badges h2 {
             margin-bottom: 2rem;
             font-size: 2rem;
+            justify-content: center;
         }
-        
+
         .badge-container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 20px;
         }
-        
+
         .badge {
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            background-color: white;
+            background-color: var(--card-bg);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -216,19 +313,26 @@
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            opacity: 0;
+            transform: scale(0.8);
         }
-        
+
+        .badge.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
         .badge:hover {
             transform: scale(1.1) rotate(10deg);
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
-        
+
         .badge img {
             width: 70%;
             height: 70%;
             object-fit: contain;
         }
-        
+
         .badge::before {
             content: '';
             position: absolute;
@@ -244,11 +348,11 @@
             transform: rotate(30deg);
             transition: all 0.5s;
         }
-        
+
         .badge:hover::before {
             transform: rotate(30deg) translate(20%, 20%);
         }
-        
+
         .particles {
             position: fixed;
             top: 0;
@@ -258,124 +362,218 @@
             z-index: -1;
             pointer-events: none;
         }
-        .nav-container {
-    position: absolute;
-    top: 1rem;
-    right: 2rem;
-    display: flex;
-    gap: 2rem;
-}
 
-.nav-item {
-    color: #333;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s;
-    padding: 0.5rem 0;
-    position: relative;
-}
+        .super-banner {
+            background: linear-gradient(45deg, var(--super), #ff8c42);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+            animation: superPulse 3s infinite;
+        }
 
-        
+        @keyframes superPulse {
+            0% {
+                box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+            }
+            50% {
+                box-shadow: 0 5px 20px rgba(255, 107, 53, 0.6);
+            }
+            100% {
+                box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+            }
+        }
+
+        .super-banner h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .contribution-list {
+            list-style-type: none;
+            margin: 15px 0;
+        }
+
+        .contribution-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .contribution-list li:last-child {
+            border-bottom: none;
+        }
+
+        .contribution-list li i {
+            color: #ffd700;
+            margin-top: 3px;
+        }
+
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            margin: 3rem 0;
+            border: none;
+        }
+
         @media screen and (max-width: 768px) {
             .timeline::before {
                 left: 31px;
             }
-            
             .contribution {
                 width: 100%;
                 padding-left: 70px;
                 padding-right: 25px;
             }
-            
             .contribution::after {
                 left: 21px;
             }
-            
             .left::after, .right::after {
                 left: 21px;
             }
-            
             .right {
                 left: 0;
             }
-            
             h1 {
                 font-size: 2.5rem;
             }
+            .nav-content {
+                justify-content: center;
+            }
         }
     </style>
-    <div class="nav-container">
-    <a href="index.html" class="nav-item">Home</a>
-    <a href="index.html#contact" class="nav-item">Contact</a>
-</div>
-
 </head>
 <body>
-    
     <div class="particles" id="particles-js"></div>
+    
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#contact" class="nav-item">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
     
     <div class="container">
         <header>
             <h1>My Open Source Journey</h1>
             <p class="subtitle">Contributing to the community, one pull request at a time</p>
-             
         </header>
         
         <div class="timeline">
             <div class="contribution left">
                 <div class="content">
                     <div class="date">October 2023</div>
-                    <h2>Hacktoberfest Debut</h2>
+                    <h2><i class="fas fa-code-branch"></i> Hacktoberfest Debut</h2>
                     <p>My first major open source participation in Hacktoberfest. Contributed to multiple repositories, fixed bugs, and added new features.</p>
                     <div class="achievement">4+ PRs Merged</div>
-                    <div class="achievement">First Swag Earned</div> <br>
-                    <a href="https://www.holopin.io/@jatin009v#badges" target="_blank">Hacktoberfest Profile</a>
+                    <div class="achievement">First Swag Earned</div>
+                    <br>
+                    <a href="https://www.holopin.io/@jatin009v#badges" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Hacktoberfest Profile
+                    </a>
                 </div>
             </div>
             
             <div class="contribution right">
                 <div class="content">
                     <div class="date">October 2024</div>
-                    <h2>Hacktoberfest Return</h2>
+                    <h2><i class="fas fa-undo"></i> Hacktoberfest Return</h2>
                     <p>Participated again with more experience, making higher quality contributions. Focused on documentation improvements and beginner-friendly issues.</p>
                     <div class="achievement">8+ PRs Merged</div>
                     <div class="achievement">Maintainer Appreciations</div>
                     <br>
-                    <a href="https://www.holopin.io/@jatin009v#badges" target="_blank">Hacktoberfest Profile</a>
+                    <a href="https://www.holopin.io/@jatin009v#badges" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Hacktoberfest Profile
+                    </a>
                 </div>
             </div>
             
             <div class="contribution left">
                 <div class="content">
                     <div class="date">October 2024</div>
-                    <h2>Hack AI DevFest</h2>
+                    <h2><i class="fas fa-robot"></i> Hack AI DevFest</h2>
                     <p>During Hacktoberfest, also participated in the Hack AI DevFest event. Contributed to AI/ML projects and earned recognition for quality contributions.</p>
                     <div class="achievement">Ranked #13 Overall</div>
-                    <div class="achievement">₹5000+ in Swags</div> <br>
-                     <a href="https://devfest.ai/leaderboard/cm1ndf5tp000ge04c2ujgzlm6" target="_blank">DevFest Achievements (click Here)</a>
+                    <div class="achievement">₹5000+ in Swags</div>
+                    <br>
+                    <a href="https://devfest.ai/leaderboard/cm1ndf5tp000ge04c2ujgzlm6" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> DevFest Achievements
+                    </a>
                 </div>
             </div>
-             <div class="contribution right">
+            
+            <div class="contribution right">
                 <div class="content">
                     <div class="date">01 Oct - 31 2024</div>
-                    <h2> GirlScript Summer of Code 2024 - Extended Edition! </h2>
-                    <p>This is an incredible opportunity to make a meaningful impact and learn from some of the brightest minds in tech. 🌟 <br>
-Eager to contribute to exciting projects and help bring innovative ideas to life! </p>
-                  
-                     <a href="https://www.linkedin.com/posts/jatingupta09_opensource-gssoc2024-girlscript-activity-7246891865017360384-D5up?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEFRdG0B4_NO7tpQcG58r8W_l0KOMeSoZAg" target="_blank">GSOC (click Here)</a>
+                    <h2><i class="fas fa-code"></i> GirlScript Summer of Code 2024</h2>
+                    <p>This is an incredible opportunity to make a meaningful impact and learn from some of the brightest minds in tech. 🌟 <br> Eager to contribute to exciting projects and help bring innovative ideas to life!</p>
+                    <a href="https://www.linkedin.com/posts/jatingupta09_opensource-gssoc2024-girlscript-activity-7246891865017360384-D5up?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEFRdG0B4_NO7tpQcG58r8W_l0KOMeSoZAg" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> GSOC Profile
+                    </a>
+                </div>
+            </div>
+            
+            <!-- NEW HACKTOBERFEST 2025 CONTRIBUTION -->
+            <div class="contribution left">
+                <div class="content">
+                    <div class="date">October 2025</div>
+                    <h2><i class="fas fa-trophy"></i> Hacktoberfest Super Contributor</h2>
+                    
+                    <div class="super-banner">
+                        <h3><i class="fas fa-medal"></i> Mission Accomplished!</h3>
+                        <p>Became a Hacktoberfest Super Contributor by getting all 6 pull requests accepted and merged. Went above and beyond with a total of 10 contributions!</p>
+                        <div class="achievement super-contributor">Super Contributor</div>
+                        <div class="achievement">10+ PRs Merged</div>
+                        <div class="achievement">DigitalOcean Swag</div>
+                    </div>
+                    
+                    <ul class="contribution-list">
+                        <li><i class="fas fa-check-circle"></i> Enhanced Privacy Policy Page: Improved the overall layout and design for better user readability.</li>
+                        <li><i class="fas fa-check-circle"></i> Revamped Home Component: Integrated smooth animations and engaging visuals to boost user experience.</li>
+                        <li><i class="fas fa-check-circle"></i> Upgraded Navigation Bar: Added a dynamic user menu and scroll effects for more intuitive navigation.</li>
+                        <li><i class="fas fa-check-circle"></i> Backend Logic Update: Refactored and updated the message.controller.js file for improved functionality.</li>
+                        <li><i class="fas fa-check-circle"></i> Frontend Styling Overhaul: Refactored CSS across components to enhance the overall design and user experience (UX).</li>
+                        <li><i class="fas fa-check-circle"></i> Project File Contributions: Uploaded and integrated various source files to multiple web development projects.</li>
+                    </ul>
+                    
+                    <p>It was an amazing journey of learning, coding, and contributing to the open-source community!</p>
                 </div>
             </div>
         </div>
         
+        <hr class="section-divider">
+        
         <div class="links">
-            <p>Check out my contributions :</p>
-            <a href="https://github.com/jatin009v/" target="_blank">GitHub Profile</a>
-            <a href="https://www.holopin.io/@jatin009v#badges" target="_blank">Hacktoberfest Profile</a>
-            <a href="https://devfest.ai/leaderboard/cm1ndf5tp000ge04c2ujgzlm6" target="_blank">DevFest Achievements</a>
+            <p>Check out my contributions:</p>
+            <a href="https://github.com/jatin009v/" target="_blank">
+                <i class="fab fa-github"></i> GitHub Profile
+            </a>
+            <a href="https://www.holopin.io/@jatin009v#badges" target="_blank">
+                <i class="fas fa-medal"></i> Hacktoberfest Profile
+            </a>
+            <a href="https://devfest.ai/leaderboard/cm1ndf5tp000ge04c2ujgzlm6" target="_blank">
+                <i class="fas fa-trophy"></i> DevFest Achievements
+            </a>
         </div>
         
+        <hr class="section-divider">
+        
         <div class="badges">
-            <h2>Earned Badges</h2>
+            <h2><i class="fas fa-award"></i> Earned Badges</h2>
             <div class="badge-container">
                 <div class="badge">
                     <img src="https://assets.holopin.io/eyJidWNrZXQiOiJob2xvcGluLWFzc2V0cyIsImtleSI6ImFzc2V0cy9jbDd0ZDhncDUwMTMyMDlrMHd1OHFlNHg5IiwiZWRpdHMiOnsicm90YXRlIjpudWxsfX0=" alt="Hacktoberfest 2023">
@@ -413,10 +611,14 @@ Eager to contribute to exciting projects and help bring innovative ideas to life
                 <div class="badge">
                     <img src="https://devfest.ai/_next/image?url=%2Ftickets%2F1.png&w=3840&q=75" alt="Top 15% 2024">
                 </div>
+                <!-- NEW HACKTOBERFEST 2025 BADGE -->
+                <div class="badge">
+                    <img src="https://assets.holopin.io/hf2025levels/level-super-contributor-0-0-0-0.webp" alt="Hacktoberfest 2025 Super Contributor">
+                </div>
             </div>
         </div>
     </div>
-
+    
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         // Particles.js configuration
@@ -526,40 +728,45 @@ Eager to contribute to exciting projects and help bring innovative ideas to life
                 },
                 "retina_detect": true
             });
-            
+
             // Animate timeline items on scroll
             const contributions = document.querySelectorAll('.contribution');
-            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateX(0)';
+                        entry.target.classList.add('visible');
                     }
                 });
             }, { threshold: 0.1 });
-            
+
             contributions.forEach((contribution, index) => {
-                contribution.style.opacity = 0;
                 contribution.style.transition = `opacity 0.5s ease ${index * 0.2}s, transform 0.5s ease ${index * 0.2}s`;
-                
-                if (contribution.classList.contains('left')) {
-                    contribution.style.transform = 'translateX(-50px)';
-                } else {
-                    contribution.style.transform = 'translateX(50px)';
-                }
-                
                 observer.observe(contribution);
             });
-            
-            // Badge hover effect enhancement
+
+            // Animate badges on scroll
             const badges = document.querySelectorAll('.badge');
+            const badgeObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, index * 100);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            badges.forEach(badge => {
+                badge.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                badgeObserver.observe(badge);
+            });
+
+            // Badge hover effect enhancement
             badges.forEach(badge => {
                 badge.addEventListener('mouseenter', () => {
                     const randomColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
                     badge.style.boxShadow = `0 10px 25px ${randomColor}40`;
                 });
-                
                 badge.addEventListener('mouseleave', () => {
                     badge.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
                 });
