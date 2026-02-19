@@ -2,147 +2,138 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
     
     <!-- Primary Meta Tags -->
-    <title>Jatin Gupta | Microsoft Learn Profile | Fabric & Azure AI</title>
-    <meta name="description" content="Microsoft Learn profile of Jatin Gupta. Showcasing completed modules in Microsoft Fabric, Azure AI, Power Platform, and Azure Fundamentals with 30+ trophies.">
-    <meta name="keywords" content="Microsoft Learn, Microsoft Fabric, Azure AI, Power Platform, Azure Fundamentals, Jatin Gupta, Microsoft Certification, Cloud Computing, AI Engineer">
+    <title>Jatin Gupta | Microsoft Learn Showcase | Fabric, Azure AI & Power Platform</title>
+    <meta name="description" content="Explore Jatin Gupta's Microsoft Learn journey: 30+ trophies, 170K+ XP, expertise in Microsoft Fabric, Azure AI, and Power Platform. Complete learning showcase.">
+    <meta name="keywords" content="Microsoft Learn, Microsoft Fabric, Azure AI, Power Platform, Jatin Gupta, Cloud Computing, AI Engineer, Data Warehouse, Lakehouse">
     <meta name="author" content="Jatin Gupta">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="#">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Jatin Gupta | Microsoft Learn Achievement Hub">
-    <meta property="og:description" content="Explore my journey through Microsoft Learn: 30+ trophies in Fabric, Azure AI, and Cloud Fundamentals.">
-    <meta property="og:image" content="https://img.icons8.com/color/480/microsoft.png">
+    <meta property="og:description" content="30+ trophies in Microsoft Fabric, Azure AI, and Cloud Fundamentals. See my complete learning journey.">
+    <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2300a4ef'/%3E%3Ctext x='50' y='68' font-size='48' text-anchor='middle' fill='white' font-family='Arial'%3EJG%3C/text%3E%3C/svg%3E">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="Jatin Gupta | Microsoft Learn Profile">
     <meta property="twitter:description" content="Microsoft Learn achievements in Fabric, Azure AI, and Power Platform.">
-    <meta property="twitter:image" content="https://img.icons8.com/color/480/microsoft.png">
-    
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ProfilePage",
-        "dateCreated": "2026-02-18",
-        "mainEntity": {
-            "@type": "Person",
-            "name": "Jatin Gupta",
-            "email": "guptaji7932@gmail.com",
-            "description": "Microsoft Learn enthusiast with expertise in Microsoft Fabric, Azure AI, and Cloud Fundamentals. Completed 15+ advanced modules.",
-            "knowsAbout": ["Microsoft Fabric", "Azure AI", "Power Platform", "Azure Fundamentals"],
-            "hasCredential": [
-                {
-                    "@type": "EducationalOccupationalCredential",
-                    "name": "Microsoft Certified: Fabric Analytics Engineer",
-                    "credentialCategory": "Certification"
-                },
-                {
-                    "@type": "EducationalOccupationalCredential",
-                    "name": "Azure AI Fundamentals",
-                    "credentialCategory": "Certification"
-                }
-            ],
-            "memberOf": {
-                "@type": "Organization",
-                "name": "Microsoft Learn Community"
-            }
-        }
-    }
-    </script>
     
     <!-- Favicon -->
     <link rel="icon" href="https://www.microsoft.com/favicon.ico" type="image/x-icon">
-    
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" href="https://img.icons8.com/color/480/microsoft.png">
     
     <!-- Stylesheets -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Preconnect for performance -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecf2 100%);
-            color: #2e2e2e;
+        * {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
         }
         
-        /* Microsoft-inspired gradient */
+        /* Microsoft gradient animation */
         .ms-gradient {
             background: linear-gradient(135deg, #f25022 0%, #7fba00 33%, #00a4ef 66%, #ffb900 100%);
             background-size: 300% 300%;
-            animation: gradientFlow 8s ease infinite;
+            animation: gradientShift 6s ease infinite;
         }
         
-        @keyframes gradientFlow {
+        @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
         
-        /* Animated card styles */
-        .trophy-card {
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border-left: 4px solid transparent;
+        /* Card hover effects */
+        .achievement-card {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 1px solid rgba(0,0,0,0.05);
         }
         
-        .trophy-card:hover {
-            transform: translateY(-6px) scale(1.02);
-            box-shadow: 0 20px 30px -10px rgba(0, 90, 158, 0.3);
-            border-left: 4px solid #00a4ef;
+        .achievement-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 90, 158, 0.2), 0 8px 10px -6px rgba(0, 90, 158, 0.1);
         }
         
-        /* Pulse animation for XP counter */
-        @keyframes softPulse {
-            0% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.9; transform: scale(1.02); }
-            100% { opacity: 1; transform: scale(1); }
+        /* Dark mode styles */
+        .dark-mode {
+            background: #0a1929;
+            color: #e3eaf2;
         }
         
-        .xp-badge {
-            animation: softPulse 3s infinite ease-in-out;
+        .dark-mode .bg-white {
+            background: #132f4c;
+            color: #e3eaf2;
         }
         
-        /* Profile header animation */
-        .profile-avatar {
-            transition: transform 0.5s ease;
+        .dark-mode .bg-gray-50 {
+            background: #1e3a5f;
         }
         
-        .profile-avatar:hover {
-            transform: rotate(8deg) scale(1.1);
+        .dark-mode .text-gray-800, .dark-mode .text-gray-700 {
+            color: #f0f4fa;
         }
         
-        /* Microsoft color accents */
-        .text-ms-orange { color: #f25022; }
-        .text-ms-green { color: #7fba00; }
-        .text-ms-blue { color: #00a4ef; }
-        .text-ms-yellow { color: #ffb900; }
-        .bg-ms-orange { background-color: #f25022; }
-        .bg-ms-green { background-color: #7fba00; }
-        .bg-ms-blue { background-color: #00a4ef; }
-        .bg-ms-yellow { background-color: #ffb900; }
-        
-        /* Module list styling */
-        .module-item {
-            border-bottom: 1px solid #edebe9;
-            transition: background-color 0.2s;
+        .dark-mode .text-gray-600, .dark-mode .text-gray-500 {
+            color: #b0c8da;
         }
         
-        .module-item:hover {
-            background-color: #f0f6ff;
+        .dark-mode .border-gray-200 {
+            border-color: #2d4b6e;
+        }
+        
+        .dark-mode .module-item {
+            border-color: #2d4b6e;
+        }
+        
+        .dark-mode .module-item:hover {
+            background-color: #1e3a5f;
+        }
+        
+        .dark-mode .bg-gray-100 {
+            background-color: #1e3a5f;
+        }
+        
+        /* Theme toggle button */
+        .theme-toggle {
+            background: rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        /* Responsive improvements */
+        @media (max-width: 640px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .trophy-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Scroll animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         /* Custom scrollbar */
@@ -152,474 +143,451 @@
         }
         
         ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
+            background: #f1f5f9;
         }
         
         ::-webkit-scrollbar-thumb {
-            background: #c1c1c1;
-            border-radius: 10px;
+            background: #94a3b8;
+            border-radius: 4px;
         }
         
         ::-webkit-scrollbar-thumb:hover {
-            background: #a8a8a8;
+            background: #64748b;
         }
         
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-            }
+        .dark-mode ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        
+        .dark-mode ::-webkit-scrollbar-thumb {
+            background: #475569;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="bg-gradient-to-br from-slate-50 to-gray-100 min-h-screen transition-colors duration-300">
 
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50">Skip to main content</a>
+    <!-- Skip to main -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-lg z-50">Skip to main content</a>
 
-    <!-- Header with Microsoft branding -->
-    <header class="bg-white shadow-md sticky top-0 z-40" role="banner">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <!-- Animated Microsoft logo -->
-                    <div class="w-10 h-10 ms-gradient rounded-lg flex items-center justify-center shadow-lg">
-                        <i class="fab fa-microsoft text-white text-xl"></i>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 transition-colors dark-mode:bg-[#0a1929]/80" id="mainHeader">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 ms-gradient rounded-lg flex items-center justify-center shadow-md">
+                        <i class="fab fa-microsoft text-white text-lg"></i>
                     </div>
-                    <div>
-                        <h1 class="text-xl font-semibold text-gray-800">Jatin's Microsoft Learn Hub</h1>
-                        <p class="text-xs text-gray-500">learn.microsoft.com/en-gb/users/JatinGupta-0431</p>
-                    </div>
+                    <span class="font-semibold text-gray-800 dark-mode:text-white hidden sm:inline">Jatin's Learn Hub</span> <br> 
+                    
                 </div>
-                
-                <!-- Navigation -->
-                <nav aria-label="Main navigation">
-                    <ul class="flex space-x-1 md:space-x-4">
-                        <li><a href="#profile" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 transition">Profile</a></li>
-                        <li><a href="#trophies" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 transition">Trophies</a></li>
-                        <li><a href="#modules" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 transition">Modules</a></li>
-                        <li><a href="#activity" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 transition">Activity</a></li>
-                    </ul>
-                </nav>
+
+                <!-- Navigation + Theme Toggle -->
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <nav class="hidden md:flex items-center gap-1">
+                        <a href="#trophies" class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-blue-600 dark-mode:text-gray-300 dark-mode:hover:text-blue-400 rounded-lg hover:bg-gray-100 dark-mode:hover:bg-[#1e3a5f] transition">Trophies</a>
+                        <a href="#modules" class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-blue-600 dark-mode:text-gray-300 dark-mode:hover:text-blue-400 rounded-lg hover:bg-gray-100 dark-mode:hover:bg-[#1e3a5f] transition">Modules</a>
+                        <a href="#activity" class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-blue-600 dark-mode:text-gray-300 dark-mode:hover:text-blue-400 rounded-lg hover:bg-gray-100 dark-mode:hover:bg-[#1e3a5f] transition">Activity</a>
+                    </nav>
+
+                    <!-- Theme Toggle Button -->
+                    <button id="themeToggle" class="w-9 h-9 rounded-full bg-gray-200 dark-mode:bg-[#1e3a5f] flex items-center justify-center hover:scale-110 transition-transform" aria-label="Toggle dark mode">
+                        <i class="fas fa-sun text-yellow-500 hidden dark-mode:inline"></i>
+                        <i class="fas fa-moon text-gray-700 dark-mode:hidden"></i>
+                    </button>
+
+                    <!-- Mobile menu button -->
+                    <button class="md:hidden w-9 h-9 rounded-lg bg-gray-100 dark-mode:bg-[#1e3a5f] flex items-center justify-center" onclick="toggleMobileMenu()" aria-label="Menu">
+                        <i class="fas fa-bars text-gray-600 dark-mode:text-gray-300"></i>
+                    </button>
+                </div>
             </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark-mode:bg-[#0a1929] border-t border-gray-200 dark-mode:border-[#2d4b6e] py-2">
+            <a href="#trophies" class="block px-4 py-2 text-gray-600 dark-mode:text-gray-300 hover:bg-gray-100 dark-mode:hover:bg-[#1e3a5f]" onclick="toggleMobileMenu()">Trophies</a>
+            <a href="#modules" class="block px-4 py-2 text-gray-600 dark-mode:text-gray-300 hover:bg-gray-100 dark-mode:hover:bg-[#1e3a5f]" onclick="toggleMobileMenu()">Modules</a>
+            <a href="#activity" class="block px-4 py-2 text-gray-600 dark-mode:text-gray-300 hover:bg-gray-100 dark-mode:hover:bg-[#1e3a5f]" onclick="toggleMobileMenu()">Activity</a>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main id="main-content" class="container mx-auto px-4 py-8 flex-grow" role="main">
+    <main id="main" class="container mx-auto px-4 py-6 sm:py-8 max-w-6xl">
         
-        <!-- Profile Section with Key Stats -->
-        <section id="profile" class="mb-10 scroll-mt-20" aria-labelledby="profile-heading">
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-                <!-- Microsoft-colored top bar -->
+        <!-- Profile Hero -->
+        <section class="mb-8 fade-up">
+            <div class="bg-white dark-mode:bg-[#132f4c] rounded-2xl shadow-xl overflow-hidden transition-colors">
                 <div class="h-2 w-full ms-gradient"></div>
                 
-                <div class="p-6 md:p-8">
-                    <div class="flex flex-col md:flex-row gap-8">
-                        <!-- Avatar and basic info -->
-                        <div class="flex flex-col items-center text-center md:w-1/3">
-                            <div class="relative mb-4">
-                                <div class="w-32 h-32 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-2xl profile-avatar">
-                                    <span class="text-5xl font-bold text-white">JG</span>
+                <div class="p-4 sm:p-6 lg:p-8">
+                    <!-- Mobile: Stack vertically, Desktop: Flex row -->
+                    <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
+                        <!-- Profile info -->
+                        <div class="flex flex-col sm:flex-row lg:flex-col items-center sm:items-start lg:items-center text-center sm:text-left lg:text-center gap-4 lg:w-1/3">
+                            <div class="relative flex-shrink-0">
+                                <div class="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center shadow-xl hover:scale-105 transition-transform">
+                                    <span class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">JG</span>
                                 </div>
-                                <div class="absolute -bottom-2 -right-2 bg-green-500 rounded-full p-2 border-4 border-white">
-                                    <i class="fas fa-certificate text-white text-sm"></i>
-                                </div>
-                            </div>
-                            <h2 class="text-2xl font-bold text-gray-800">Jatin Gupta</h2>
-                            <p class="text-gray-600 mb-2 flex items-center gap-2">
-                                <i class="fas fa-envelope text-ms-blue"></i>
-                                <a href="mailto:guptaji7932@gmail.com" class="hover:text-blue-600">guptaji7932@gmail.com</a>
-                            </p>
-                            <p class="text-sm text-gray-500 mb-4 flex items-center gap-1">
-                                <i class="fab fa-microsoft"></i> Microsoft Learn Profile · Level 11
-                            </p>
-                            <a href="https://learn.microsoft.com/en-gb/users/JatinGupta-0431" target="_blank" class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-2 rounded-full text-sm font-medium transition-all hover:shadow-lg inline-flex items-center gap-2">
-                                <i class="fas fa-external-link-alt"></i> View Official Profile
-                            </a>
-                        </div>
-                        
-                        <!-- Stats and XP -->
-                        <div class="flex-1 grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <div class="bg-gray-50 p-4 rounded-xl text-center hover:shadow-md transition">
-                                <div class="text-3xl font-bold text-ms-blue">170,950</div>
-                                <p class="text-sm text-gray-600 flex items-center justify-center gap-1"><i class="fas fa-bolt text-yellow-500"></i> XP</p>
-                            </div>
-                            <div class="bg-gray-50 p-4 rounded-xl text-center hover:shadow-md transition">
-                                <div class="text-3xl font-bold text-ms-green">119</div>
-                                <p class="text-sm text-gray-600"><i class="fas fa-medal mr-1"></i> Badges</p>
-                            </div>
-                            <div class="bg-gray-50 p-4 rounded-xl text-center hover:shadow-md transition">
-                                <div class="text-3xl font-bold text-ms-orange">30</div>
-                                <p class="text-sm text-gray-600"><i class="fas fa-trophy mr-1"></i> Trophies</p>
-                            </div>
-                            <div class="bg-gray-50 p-4 rounded-xl text-center hover:shadow-md transition">
-                                <div class="text-3xl font-bold text-ms-yellow">11</div>
-                                <p class="text-sm text-gray-600"><i class="fas fa-chart-line mr-1"></i> Level</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Additional stats row -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 pt-6 border-t border-gray-200">
-                        <div class="flex items-center gap-2 text-gray-700">
-                            <i class="fas fa-check-circle text-green-500"></i>
-                            <span><strong>1</strong> Accepted answers</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-gray-700">
-                            <i class="fas fa-users text-blue-500"></i>
-                            <span><strong>0</strong> Following</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-gray-700">
-                            <i class="fas fa-user-plus text-purple-500"></i>
-                            <span><strong>0</strong> Followers</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-gray-700">
-                            <i class="fas fa-star text-yellow-500"></i>
-                            <span><strong>30</strong> Achievements</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Trophies Showcase (Microsoft Fabric & Azure AI focus) -->
-        <section id="trophies" class="mb-10 scroll-mt-20" aria-labelledby="trophies-heading">
-            <div class="flex items-center justify-between mb-6">
-                <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
-                    <i class="fas fa-trophy text-ms-yellow"></i> Recent Trophies & Achievements
-                </h2>
-                <span class="bg-blue-100 text-ms-blue px-3 py-1 rounded-full text-sm font-medium">30+ total trophies</span>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Microsoft Fabric Trophies -->
-                <div class="trophy-card bg-white rounded-xl shadow-md p-5 border-l-4 border-ms-blue">
-                    <div class="flex items-start gap-3">
-                        <div class="bg-blue-50 p-2 rounded-lg">
-                            <i class="fas fa-database text-2xl text-ms-blue"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="font-semibold text-gray-800">Manage a Microsoft Fabric environment</h3>
-                            <p class="text-xs text-gray-500 mt-1">Completed 17/02/2026</p>
-                            <p class="text-xs text-gray-400 mt-2">All module assessments passed</p>
-                        </div>
-                        <i class="fas fa-check-circle text-green-500"></i>
-                    </div>
-                </div>
-
-                <div class="trophy-card bg-white rounded-xl shadow-md p-5 border-l-4 border-ms-blue">
-                    <div class="flex items-start gap-3">
-                        <div class="bg-blue-50 p-2 rounded-lg">
-                            <i class="fas fa-warehouse text-2xl text-ms-blue"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="font-semibold text-gray-800">Implement a data warehouse with Microsoft Fabric</h3>
-                            <p class="text-xs text-gray-500 mt-1">Completed 17/02/2026</p>
-                            <p class="text-xs text-gray-400 mt-2">All module assessments passed</p>
-                        </div>
-                        <i class="fas fa-check-circle text-green-500"></i>
-                    </div>
-                </div>
-
-                <div class="trophy-card bg-white rounded-xl shadow-md p-5 border-l-4 border-ms-blue">
-                    <div class="flex items-start gap-3">
-                        <div class="bg-blue-50 p-2 rounded-lg">
-                            <i class="fas fa-clock text-2xl text-ms-blue"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="font-semibold text-gray-800">Implement Real-Time Intelligence with Microsoft Fabric</h3>
-                            <p class="text-xs text-gray-500 mt-1">Completed 17/02/2026</p>
-                            <p class="text-xs text-gray-400 mt-2">All module assessments passed</p>
-                        </div>
-                        <i class="fas fa-check-circle text-green-500"></i>
-                    </div>
-                </div>
-
-                <div class="trophy-card bg-white rounded-xl shadow-md p-5 border-l-4 border-ms-blue">
-                    <div class="flex items-start gap-3">
-                        <div class="bg-blue-50 p-2 rounded-lg">
-                            <i class="fas fa-water text-2xl text-ms-blue"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="font-semibold text-gray-800">Implement a Lakehouse with Microsoft Fabric</h3>
-                            <p class="text-xs text-gray-500 mt-1">Completed 17/02/2026</p>
-                            <p class="text-xs text-gray-400 mt-2">All module assessments passed</p>
-                        </div>
-                        <i class="fas fa-check-circle text-green-500"></i>
-                    </div>
-                </div>
-
-                <!-- Azure AI Trophies -->
-                <div class="trophy-card bg-white rounded-xl shadow-md p-5 border-l-4 border-ms-orange">
-                    <div class="flex items-start gap-3">
-                        <div class="bg-orange-50 p-2 rounded-lg">
-                            <i class="fas fa-brain text-2xl text-ms-orange"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="font-semibold text-gray-800">Develop Generative AI solutions with Azure OpenAI Service</h3>
-                            <p class="text-xs text-gray-500 mt-1">Completed 11/04/2024</p>
-                        </div>
-                        <i class="fas fa-check-circle text-green-500"></i>
-                    </div>
-                </div>
-
-                <div class="trophy-card bg-white rounded-xl shadow-md p-5 border-l-4 border-ms-green">
-                    <div class="flex items-start gap-3">
-                        <div class="bg-green-50 p-2 rounded-lg">
-                            <i class="fas fa-robot text-2xl text-ms-green"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="font-semibold text-gray-800">Create computer vision solutions with Azure AI Vision</h3>
-                            <p class="text-xs text-gray-500 mt-1">Completed 05/02/2024</p>
-                        </div>
-                        <i class="fas fa-check-circle text-green-500"></i>
-                    </div>
-                </div>
-
-                <div class="trophy-card bg-white rounded-xl shadow-md p-5 border-l-4 border-ms-green">
-                    <div class="flex items-start gap-3">
-                        <div class="bg-green-50 p-2 rounded-lg">
-                            <i class="fas fa-file-alt text-2xl text-ms-green"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="font-semibold text-gray-800">Develop solutions with Azure AI Document Intelligence</h3>
-                            <p class="text-xs text-gray-500 mt-1">Completed 05/02/2024</p>
-                        </div>
-                        <i class="fas fa-check-circle text-green-500"></i>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- See all trophies link -->
-            <div class="text-center mt-8">
-                <a href="#" class="inline-flex items-center gap-2 text-ms-blue hover:text-blue-700 font-medium transition">
-                    View all 30+ trophies <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- Modules List (Detailed from your input) -->
-        <section id="modules" class="mb-10 scroll-mt-20" aria-labelledby="modules-heading">
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-                <div class="p-6 md:p-8">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-                        <i class="fas fa-cubes text-ms-blue"></i> Completed Modules & Learning Paths
-                    </h2>
-                    
-                    <div class="space-y-1 divide-y divide-gray-100">
-                        <!-- Microsoft Fabric Modules -->
-                        <div class="module-item py-4 flex flex-wrap items-start gap-3">
-                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-trophy text-ms-blue text-xs"></i>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="font-medium text-gray-800">Manage a Microsoft Fabric environment</p>
-                                <p class="text-xs text-gray-500">Completed 17/02/2026 · All module assessments passed</p>
-                            </div>
-                            <span class="bg-blue-50 text-ms-blue text-xs px-2 py-1 rounded">Fabric</span>
-                        </div>
-                        
-                        <div class="module-item py-4 flex flex-wrap items-start gap-3">
-                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-trophy text-ms-blue text-xs"></i>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="font-medium text-gray-800">Implement a data warehouse with Microsoft Fabric</p>
-                                <p class="text-xs text-gray-500">Completed 17/02/2026 · All module assessments passed</p>
-                            </div>
-                            <span class="bg-blue-50 text-ms-blue text-xs px-2 py-1 rounded">Fabric</span>
-                        </div>
-                        
-                        <div class="module-item py-4 flex flex-wrap items-start gap-3">
-                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-trophy text-ms-blue text-xs"></i>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="font-medium text-gray-800">Implement Real-Time Intelligence with Microsoft Fabric</p>
-                                <p class="text-xs text-gray-500">Completed 17/02/2026 · All module assessments passed</p>
-                            </div>
-                            <span class="bg-blue-50 text-ms-blue text-xs px-2 py-1 rounded">Fabric</span>
-                        </div>
-                        
-                        <div class="module-item py-4 flex flex-wrap items-start gap-3">
-                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-trophy text-ms-blue text-xs"></i>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="font-medium text-gray-800">Implement a Lakehouse with Microsoft Fabric</p>
-                                <p class="text-xs text-gray-500">Completed 17/02/2026 · All module assessments passed</p>
-                            </div>
-                            <span class="bg-blue-50 text-ms-blue text-xs px-2 py-1 rounded">Fabric</span>
-                        </div>
-                        
-                        <!-- Azure AI Modules -->
-                        <div class="module-item py-4 flex flex-wrap items-start gap-3">
-                            <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-robot text-ms-orange text-xs"></i>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="font-medium text-gray-800">Develop Generative AI solutions with Azure OpenAI Service</p>
-                                <p class="text-xs text-gray-500">Completed 11/04/2024</p>
-                            </div>
-                            <span class="bg-orange-50 text-ms-orange text-xs px-2 py-1 rounded">Azure AI</span>
-                        </div>
-                        
-                        <div class="module-item py-4 flex flex-wrap items-start gap-3">
-                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-rocket text-ms-green text-xs"></i>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="font-medium text-gray-800">Transform your business applications with fusion development</p>
-                                <p class="text-xs text-gray-500">Completed 31/03/2024</p>
-                            </div>
-                            <span class="bg-green-50 text-ms-green text-xs px-2 py-1 rounded">Power Platform</span>
-                        </div>
-                        
-                        <div class="module-item py-4 flex flex-wrap items-start gap-3">
-                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-certificate text-purple-600 text-xs"></i>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="font-medium text-gray-800">PL-900: Microsoft Power Platform Fundamentals</p>
-                                <p class="text-xs text-gray-500">Completed 31/03/2024</p>
-                            </div>
-                            <span class="bg-purple-50 text-purple-600 text-xs px-2 py-1 rounded">Certification</span>
-                        </div>
-                        
-                        <div class="module-item py-4 flex flex-wrap items-start gap-3">
-                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-cloud text-ms-blue text-xs"></i>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="font-medium text-gray-800">Microsoft Azure Fundamentals: Describe Cloud concepts</p>
-                                <p class="text-xs text-gray-500">Completed 09/03/2024</p>
-                            </div>
-                            <span class="bg-blue-50 text-ms-blue text-xs px-2 py-1 rounded">Azure</span>
-                        </div>
-                        
-                        <div class="module-item py-4 flex flex-wrap items-start gap-3">
-                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-shield-alt text-ms-blue text-xs"></i>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="font-medium text-gray-800">Microsoft Azure Fundamentals: Describe Azure management and governance</p>
-                                <p class="text-xs text-gray-500">Completed 09/03/2024</p>
-                            </div>
-                            <span class="bg-blue-50 text-ms-blue text-xs px-2 py-1 rounded">Azure</span>
-                        </div>
-                        
-                        <div class="module-item py-4 flex flex-wrap items-start gap-3">
-                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-language text-ms-green text-xs"></i>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="font-medium text-gray-800">Develop natural language processing solutions with Azure AI Services</p>
-                                <p class="text-xs text-gray-500">Completed 05/02/2024</p>
-                            </div>
-                            <span class="bg-green-50 text-ms-green text-xs px-2 py-1 rounded">AI</span>
-                        </div>
-                        
-                        <div class="module-item py-4 flex flex-wrap items-start gap-3">
-                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-microchip text-ms-blue text-xs"></i>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="font-medium text-gray-800">Microsoft Azure AI Fundamentals: Natural Language Processing</p>
-                                <p class="text-xs text-gray-500">Completed 25/12/2023</p>
-                            </div>
-                            <span class="bg-blue-50 text-ms-blue text-xs px-2 py-1 rounded">AI</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Activity & Achievements -->
-        <section id="activity" class="mb-10 scroll-mt-20" aria-labelledby="activity-heading">
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-                <div class="p-6 md:p-8">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-                        <i class="fas fa-chart-bar text-ms-yellow"></i> Learning Activity
-                    </h2>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h3 class="font-semibold text-gray-700 mb-4">Recent Activity</h3>
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-check text-green-600 text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-medium">Completed 4 Microsoft Fabric modules</p>
-                                        <p class="text-xs text-gray-500">17 February 2026</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                                    <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-trophy text-blue-600 text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-medium">Earned "Data Warehouse" trophy</p>
-                                        <p class="text-xs text-gray-500">17 February 2026</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                                    <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-star text-orange-600 text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-medium">Reached Level 11</p>
-                                        <p class="text-xs text-gray-500">January 2026</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h3 class="font-semibold text-gray-700 mb-4">Learning Paths in Progress</h3>
-                            <div class="space-y-4">
-                                <div>
-                                    <div class="flex justify-between text-sm mb-1">
-                                        <span>Microsoft Fabric Analytics Engineer</span>
-                                        <span class="font-medium">75%</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2">
-                                        <div class="bg-ms-blue h-2 rounded-full" style="width: 75%"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-sm mb-1">
-                                        <span>Azure AI Engineer Associate</span>
-                                        <span class="font-medium">60%</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2">
-                                        <div class="bg-ms-green h-2 rounded-full" style="width: 60%"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-sm mb-1">
-                                        <span>Power Platform Solution Architect</span>
-                                        <span class="font-medium">30%</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2">
-                                        <div class="bg-ms-orange h-2 rounded-full" style="width: 30%"></div>
-                                    </div>
+                                <div class="absolute -bottom-1 -right-1 bg-green-500 rounded-full p-1.5 border-3 border-white dark-mode:border-[#132f4c]">
+                                    <i class="fas fa-certificate text-white text-xs"></i>
                                 </div>
                             </div>
                             
-                            <!-- Achievement code input -->
-                            <!-- <div class="mt-6 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl">
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
-                                    <i class="fas fa-ticket-alt mr-1 text-ms-blue"></i> Have an achievement code?
-                                </label>
-                                <div class="flex gap-2">
-                                    <input type="text" placeholder="Enter code" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                    <button class="bg-ms-blue hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm transition">Redeem</button>
+                            <div class="flex-1">
+                                <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 dark-mode:text-white">Jatin Gupta</h1>
+                                <p class="text-sm sm:text-base text-gray-600 dark-mode:text-gray-300 mt-1 flex items-center justify-center sm:justify-start lg:justify-center gap-2">
+                                    <i class="fas fa-envelope text-blue-500"></i>
+                                    <a href="mailto:guptaji7932@gmail.com" class="hover:underline break-all">guptaji7932@gmail.com</a>
+                                </p>
+                                <div class="flex flex-wrap items-center justify-center sm:justify-start lg:justify-center gap-2 mt-2">
+                                    <span class="px-3 py-1 bg-blue-100 dark-mode:bg-[#1e3a5f] text-blue-700 dark-mode:text-blue-300 rounded-full text-xs font-medium">Level 11</span>
+                                    <span class="px-3 py-1 bg-purple-100 dark-mode:bg-[#1e3a5f] text-purple-700 dark-mode:text-purple-300 rounded-full text-xs font-medium">170,950 XP</span>
+                                    <span class="px-3 py-1 bg-amber-100 dark-mode:bg-[#1e3a5f] text-amber-700 dark-mode:text-amber-300 rounded-full text-xs font-medium">30+ Trophies</span>
                                 </div>
-                            </div> -->
+                            </div>
+                        </div>
+
+                        <!-- Stats Grid -->
+                        <div class="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+                            <div class="bg-gray-50 dark-mode:bg-[#1e3a5f] p-3 sm:p-4 rounded-xl text-center hover:shadow-md transition">
+                                <div class="text-xl sm:text-2xl font-bold text-blue-600 dark-mode:text-blue-400">119</div>
+                                <p class="text-xs sm:text-sm text-gray-600 dark-mode:text-gray-300"><i class="fas fa-medal mr-1"></i> Badges</p>
+                            </div>
+                            <div class="bg-gray-50 dark-mode:bg-[#1e3a5f] p-3 sm:p-4 rounded-xl text-center hover:shadow-md transition">
+                                <div class="text-xl sm:text-2xl font-bold text-green-600 dark-mode:text-green-400">30</div>
+                                <p class="text-xs sm:text-sm text-gray-600 dark-mode:text-gray-300"><i class="fas fa-trophy mr-1"></i> Trophies</p>
+                            </div>
+                            <div class="bg-gray-50 dark-mode:bg-[#1e3a5f] p-3 sm:p-4 rounded-xl text-center hover:shadow-md transition">
+                                <div class="text-xl sm:text-2xl font-bold text-orange-600 dark-mode:text-orange-400">4</div>
+                                <p class="text-xs sm:text-sm text-gray-600 dark-mode:text-gray-300"><i class="fas fa-certificate mr-1"></i> Certs</p>
+                            </div>
+                            <div class="bg-gray-50 dark-mode:bg-[#1e3a5f] p-3 sm:p-4 rounded-xl text-center hover:shadow-md transition">
+                                <div class="text-xl sm:text-2xl font-bold text-yellow-600 dark-mode:text-yellow-400">15+</div>
+                                <p class="text-xs sm:text-sm text-gray-600 dark-mode:text-gray-300"><i class="fas fa-code mr-1"></i> Modules</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick links -->
+                    <div class="flex flex-wrap justify-center gap-3 mt-6 pt-4 border-t border-gray-200 dark-mode:border-[#2d4b6e]">
+                        <a href="https://learn.microsoft.com/en-gb/users/JatinGupta-0431" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white rounded-lg text-sm transition">
+                            <i class="fab fa-microsoft"></i> Official Profile
+                        </a>
+                        <a href="#modules" class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm transition">
+                            <i class="fas fa-book-open"></i> View Modules
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievement Showcase - Microsoft Fabric Focus -->
+        <section id="trophies" class="mb-8 scroll-mt-20 fade-up">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl sm:text-2xl font-bold text-gray-800 dark-mode:text-white flex items-center gap-2">
+                    <i class="fas fa-trophy text-amber-500"></i> Recent Achievements
+                </h2>
+                <span class="text-xs sm:text-sm text-gray-500 dark-mode:text-gray-400">Last updated: Feb 2026</span>
+            </div>
+
+            <!-- Achievement Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Fabric: Manage Environment -->
+                <div class="achievement-card bg-white dark-mode:bg-[#132f4c] rounded-xl p-4 border-l-4 border-blue-500 shadow-md">
+                    <div class="flex gap-3">
+                        <div class="bg-blue-100 dark-mode:bg-[#1e3a5f] w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-cog text-blue-600 dark-mode:text-blue-400"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-semibold text-gray-800 dark-mode:text-white text-sm sm:text-base truncate">Manage Microsoft Fabric environment</h3>
+                            <p class="text-xs text-gray-500 dark-mode:text-gray-400 mt-1">Completed 17 Feb 2026</p>
+                            <div class="flex items-center gap-1 mt-2">
+                                <span class="px-2 py-0.5 bg-blue-100 dark-mode:bg-[#1e3a5f] text-blue-700 dark-mode:text-blue-300 rounded text-xs">Fabric</span>
+                                <span class="px-2 py-0.5 bg-green-100 dark-mode:bg-[#1e3a5f] text-green-700 dark-mode:text-green-300 rounded text-xs">30 XP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fabric: Data Warehouse -->
+                <div class="achievement-card bg-white dark-mode:bg-[#132f4c] rounded-xl p-4 border-l-4 border-blue-500 shadow-md">
+                    <div class="flex gap-3">
+                        <div class="bg-blue-100 dark-mode:bg-[#1e3a5f] w-10 h-10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-warehouse text-blue-600 dark-mode:text-blue-400"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-gray-800 dark-mode:text-white text-sm sm:text-base">Implement data warehouse with Fabric</h3>
+                            <p class="text-xs text-gray-500 dark-mode:text-gray-400 mt-1">Completed 17 Feb 2026</p>
+                            <div class="flex gap-1 mt-2">
+                                <span class="px-2 py-0.5 bg-blue-100 dark-mode:bg-[#1e3a5f] text-blue-700 dark-mode:text-blue-300 rounded text-xs">Fabric</span>
+                                <span class="px-2 py-0.5 bg-green-100 dark-mode:bg-[#1e3a5f] text-green-700 dark-mode:text-green-300 rounded text-xs">45 XP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fabric: Real-Time Intelligence -->
+                <div class="achievement-card bg-white dark-mode:bg-[#132f4c] rounded-xl p-4 border-l-4 border-purple-500 shadow-md">
+                    <div class="flex gap-3">
+                        <div class="bg-purple-100 dark-mode:bg-[#1e3a5f] w-10 h-10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-bolt text-purple-600 dark-mode:text-purple-400"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-gray-800 dark-mode:text-white text-sm sm:text-base">Real-Time Intelligence with Fabric</h3>
+                            <p class="text-xs text-gray-500 dark-mode:text-gray-400 mt-1">Completed 17 Feb 2026</p>
+                            <div class="flex gap-1 mt-2">
+                                <span class="px-2 py-0.5 bg-purple-100 dark-mode:bg-[#1e3a5f] text-purple-700 dark-mode:text-purple-300 rounded text-xs">Real-Time</span>
+                                <span class="px-2 py-0.5 bg-green-100 dark-mode:bg-[#1e3a5f] text-green-700 dark-mode:text-green-300 rounded text-xs">40 XP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fabric: Lakehouse -->
+                <div class="achievement-card bg-white dark-mode:bg-[#132f4c] rounded-xl p-4 border-l-4 border-cyan-500 shadow-md">
+                    <div class="flex gap-3">
+                        <div class="bg-cyan-100 dark-mode:bg-[#1e3a5f] w-10 h-10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-water text-cyan-600 dark-mode:text-cyan-400"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-gray-800 dark-mode:text-white text-sm sm:text-base">Implement Lakehouse with Fabric</h3>
+                            <p class="text-xs text-gray-500 dark-mode:text-gray-400 mt-1">Completed 17 Feb 2026</p>
+                            <div class="flex gap-1 mt-2">
+                                <span class="px-2 py-0.5 bg-cyan-100 dark-mode:bg-[#1e3a5f] text-cyan-700 dark-mode:text-cyan-300 rounded text-xs">Lakehouse</span>
+                                <span class="px-2 py-0.5 bg-green-100 dark-mode:bg-[#1e3a5f] text-green-700 dark-mode:text-green-300 rounded text-xs">50 XP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Azure OpenAI -->
+                <div class="achievement-card bg-white dark-mode:bg-[#132f4c] rounded-xl p-4 border-l-4 border-orange-500 shadow-md">
+                    <div class="flex gap-3">
+                        <div class="bg-orange-100 dark-mode:bg-[#1e3a5f] w-10 h-10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-brain text-orange-600 dark-mode:text-orange-400"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-gray-800 dark-mode:text-white text-sm sm:text-base">Generative AI with Azure OpenAI</h3>
+                            <p class="text-xs text-gray-500 dark-mode:text-gray-400 mt-1">Completed 11 Apr 2024</p>
+                            <div class="flex gap-1 mt-2">
+                                <span class="px-2 py-0.5 bg-orange-100 dark-mode:bg-[#1e3a5f] text-orange-700 dark-mode:text-orange-300 rounded text-xs">Azure AI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Vision -->
+                <div class="achievement-card bg-white dark-mode:bg-[#132f4c] rounded-xl p-4 border-l-4 border-green-500 shadow-md">
+                    <div class="flex gap-3">
+                        <div class="bg-green-100 dark-mode:bg-[#1e3a5f] w-10 h-10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-eye text-green-600 dark-mode:text-green-400"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-gray-800 dark-mode:text-white text-sm sm:text-base">Computer Vision solutions</h3>
+                            <p class="text-xs text-gray-500 dark-mode:text-gray-400 mt-1">Completed 5 Feb 2024</p>
+                            <div class="flex gap-1 mt-2">
+                                <span class="px-2 py-0.5 bg-green-100 dark-mode:bg-[#1e3a5f] text-green-700 dark-mode:text-green-300 rounded text-xs">AI Vision</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Completed Modules List -->
+        <section id="modules" class="mb-8 scroll-mt-20 fade-up">
+            <div class="bg-white dark-mode:bg-[#132f4c] rounded-2xl shadow-xl overflow-hidden transition-colors">
+                <div class="p-5 sm:p-6">
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 dark-mode:text-white mb-4 flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-500"></i> Completed Learning Modules
+                    </h2>
+                    
+                    <div class="divide-y divide-gray-100 dark-mode:divide-gray-700">
+                        <!-- Module Item Template -->
+                        <div class="module-item py-3 flex flex-col sm:flex-row sm:items-center gap-2">
+                            <div class="flex items-center gap-2 flex-1">
+                                <div class="w-6 h-6 bg-blue-100 dark-mode:bg-[#1e3a5f] rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-blue-600 dark-mode:text-blue-400 text-xs"></i>
+                                </div>
+                                <span class="text-sm sm:text-base text-gray-700 dark-mode:text-gray-200">Manage a Microsoft Fabric environment</span>
+                            </div>
+                            <div class="flex items-center gap-2 sm:gap-3 ml-8 sm:ml-0">
+                                <span class="text-xs text-gray-500 dark-mode:text-gray-400">17 Feb 2026</span>
+                                <span class="px-2 py-0.5 bg-blue-100 dark-mode:bg-[#1e3a5f] text-blue-700 dark-mode:text-blue-300 rounded text-xs whitespace-nowrap">Fabric</span>
+                            </div>
+                        </div>
+
+                        <div class="module-item py-3 flex flex-col sm:flex-row sm:items-center gap-2">
+                            <div class="flex items-center gap-2 flex-1">
+                                <div class="w-6 h-6 bg-blue-100 dark-mode:bg-[#1e3a5f] rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-blue-600 dark-mode:text-blue-400 text-xs"></i>
+                                </div>
+                                <span class="text-sm sm:text-base text-gray-700 dark-mode:text-gray-200">Implement a data warehouse with Microsoft Fabric</span>
+                            </div>
+                            <div class="flex items-center gap-2 sm:gap-3 ml-8 sm:ml-0">
+                                <span class="text-xs text-gray-500 dark-mode:text-gray-400">17 Feb 2026</span>
+                                <span class="px-2 py-0.5 bg-blue-100 dark-mode:bg-[#1e3a5f] text-blue-700 dark-mode:text-blue-300 rounded text-xs">Fabric</span>
+                            </div>
+                        </div>
+
+                        <div class="module-item py-3 flex flex-col sm:flex-row sm:items-center gap-2">
+                            <div class="flex items-center gap-2 flex-1">
+                                <div class="w-6 h-6 bg-purple-100 dark-mode:bg-[#1e3a5f] rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-purple-600 dark-mode:text-purple-400 text-xs"></i>
+                                </div>
+                                <span class="text-sm sm:text-base text-gray-700 dark-mode:text-gray-200">Implement Real-Time Intelligence with Microsoft Fabric</span>
+                            </div>
+                            <div class="flex items-center gap-2 sm:gap-3 ml-8 sm:ml-0">
+                                <span class="text-xs text-gray-500 dark-mode:text-gray-400">17 Feb 2026</span>
+                                <span class="px-2 py-0.5 bg-purple-100 dark-mode:bg-[#1e3a5f] text-purple-700 dark-mode:text-purple-300 rounded text-xs">Real-Time</span>
+                            </div>
+                        </div>
+
+                        <div class="module-item py-3 flex flex-col sm:flex-row sm:items-center gap-2">
+                            <div class="flex items-center gap-2 flex-1">
+                                <div class="w-6 h-6 bg-cyan-100 dark-mode:bg-[#1e3a5f] rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-cyan-600 dark-mode:text-cyan-400 text-xs"></i>
+                                </div>
+                                <span class="text-sm sm:text-base text-gray-700 dark-mode:text-gray-200">Implement a Lakehouse with Microsoft Fabric</span>
+                            </div>
+                            <div class="flex items-center gap-2 sm:gap-3 ml-8 sm:ml-0">
+                                <span class="text-xs text-gray-500 dark-mode:text-gray-400">17 Feb 2026</span>
+                                <span class="px-2 py-0.5 bg-cyan-100 dark-mode:bg-[#1e3a5f] text-cyan-700 dark-mode:text-cyan-300 rounded text-xs">Lakehouse</span>
+                            </div>
+                        </div>
+
+                        <div class="module-item py-3 flex flex-col sm:flex-row sm:items-center gap-2">
+                            <div class="flex items-center gap-2 flex-1">
+                                <div class="w-6 h-6 bg-orange-100 dark-mode:bg-[#1e3a5f] rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-orange-600 dark-mode:text-orange-400 text-xs"></i>
+                                </div>
+                                <span class="text-sm sm:text-base text-gray-700 dark-mode:text-gray-200">Develop Generative AI with Azure OpenAI Service</span>
+                            </div>
+                            <div class="flex items-center gap-2 sm:gap-3 ml-8 sm:ml-0">
+                                <span class="text-xs text-gray-500 dark-mode:text-gray-400">11 Apr 2024</span>
+                                <span class="px-2 py-0.5 bg-orange-100 dark-mode:bg-[#1e3a5f] text-orange-700 dark-mode:text-orange-300 rounded text-xs">Azure AI</span>
+                            </div>
+                        </div>
+
+                        <div class="module-item py-3 flex flex-col sm:flex-row sm:items-center gap-2">
+                            <div class="flex items-center gap-2 flex-1">
+                                <div class="w-6 h-6 bg-green-100 dark-mode:bg-[#1e3a5f] rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-green-600 dark-mode:text-green-400 text-xs"></i>
+                                </div>
+                                <span class="text-sm sm:text-base text-gray-700 dark-mode:text-gray-200">Create computer vision solutions with Azure AI Vision</span>
+                            </div>
+                            <div class="flex items-center gap-2 sm:gap-3 ml-8 sm:ml-0">
+                                <span class="text-xs text-gray-500 dark-mode:text-gray-400">5 Feb 2024</span>
+                                <span class="px-2 py-0.5 bg-green-100 dark-mode:bg-[#1e3a5f] text-green-700 dark-mode:text-green-300 rounded text-xs">AI Vision</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 text-center">
+                        <a href="https://learn.microsoft.com/en-gb/users/jatingupta-0431/" target="_blank" 
+   class="inline-flex items-center gap-1 text-blue-600 dark-mode:text-blue-400 text-sm font-medium hover:underline">
+    View all 30+ modules <i class="fas fa-arrow-right ml-1"></i>
+</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Activity & Progress -->
+        <section id="activity" class="mb-8 scroll-mt-20 fade-up">
+            <div class="bg-white dark-mode:bg-[#132f4c] rounded-2xl shadow-xl overflow-hidden transition-colors">
+                <div class="p-5 sm:p-6">
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 dark-mode:text-white mb-4 flex items-center gap-2">
+                        <i class="fas fa-chart-line text-blue-500"></i> Learning Activity & Progress
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                        <!-- Recent Activity -->
+                        <div>
+                            <h3 class="font-medium text-gray-700 dark-mode:text-gray-200 mb-3 flex items-center gap-2">
+                                <i class="fas fa-clock text-gray-400"></i> Recent Activity
+                            </h3>
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-3 p-2 bg-gray-50 dark-mode:bg-[#1e3a5f] rounded-lg">
+                                    <div class="w-8 h-8 bg-green-100 dark-mode:bg-[#2d4b6e] rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-green-600 dark-mode:text-green-400"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-800 dark-mode:text-white">Completed 4 Fabric modules</p>
+                                        <p class="text-xs text-gray-500 dark-mode:text-gray-400">17 February 2026</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-3 p-2 bg-gray-50 dark-mode:bg-[#1e3a5f] rounded-lg">
+                                    <div class="w-8 h-8 bg-blue-100 dark-mode:bg-[#2d4b6e] rounded-full flex items-center justify-center">
+                                        <i class="fas fa-trophy text-blue-600 dark-mode:text-blue-400"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-800 dark-mode:text-white">Earned "Data Warehouse" trophy</p>
+                                        <p class="text-xs text-gray-500 dark-mode:text-gray-400">17 February 2026</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-3 p-2 bg-gray-50 dark-mode:bg-[#1e3a5f] rounded-lg">
+                                    <div class="w-8 h-8 bg-orange-100 dark-mode:bg-[#2d4b6e] rounded-full flex items-center justify-center">
+                                        <i class="fas fa-star text-orange-600 dark-mode:text-orange-400"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-800 dark-mode:text-white">Reached Level 11</p>
+                                        <p class="text-xs text-gray-500 dark-mode:text-gray-400">January 2026</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Learning Progress -->
+                        <div>
+                            <h3 class="font-medium text-gray-700 dark-mode:text-gray-200 mb-3 flex items-center gap-2">
+                                <i class="fas fa-road text-gray-400"></i> Current Learning Paths
+                            </h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span class="text-gray-700 dark-mode:text-gray-200">Microsoft Fabric Analytics Engineer</span>
+                                        <span class="font-medium text-gray-800 dark-mode:text-white">75%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 dark-mode:bg-[#1e3a5f] rounded-full h-2">
+                                        <div class="bg-blue-600 h-2 rounded-full" style="width: 75%"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span class="text-gray-700 dark-mode:text-gray-200">Azure AI Engineer Associate</span>
+                                        <span class="font-medium text-gray-800 dark-mode:text-white">60%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 dark-mode:bg-[#1e3a5f] rounded-full h-2">
+                                        <div class="bg-green-600 h-2 rounded-full" style="width: 60%"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span class="text-gray-700 dark-mode:text-gray-200">Power Platform Solution Architect</span>
+                                        <span class="font-medium text-gray-800 dark-mode:text-white">30%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 dark-mode:bg-[#1e3a5f] rounded-full h-2">
+                                        <div class="bg-orange-600 h-2 rounded-full" style="width: 30%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- XP Progress -->
+                            <div class="mt-4 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 dark-mode:from-[#1e3a5f] dark-mode:to-[#2d4b6e] rounded-lg">
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span class="font-medium text-gray-700 dark-mode:text-gray-200">Yearly XP Goal</span>
+                                    <span class="text-gray-800 dark-mode:text-white">170,950 / 200,000</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark-mode:bg-[#0a1929] rounded-full h-2.5">
+                                    <div class="bg-gradient-to-r from-blue-500 to-purple-500 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                                <p class="text-xs text-gray-500 dark-mode:text-gray-400 mt-2">On track to reach 200K XP this year!</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -628,73 +596,76 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8 mt-12" role="contentinfo">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0 text-center md:text-left">
-                    <p class="text-lg font-semibold flex items-center justify-center md:justify-start gap-2">
-                        <i class="fab fa-microsoft"></i> Jatin's Microsoft Learn Journey
-                    </p>
-                    <p class="text-gray-400 text-sm mt-1">© 2024-2026 · All achievements displayed are from official Microsoft Learn profile</p>
-                </div>
-                <div class="flex space-x-6">
-                    <a href="https://learn.microsoft.com/en-gb/users/JatinGupta-0431" target="_blank" class="text-gray-300 hover:text-white transition">
-                        <i class="fas fa-external-link-alt mr-1"></i> Official Profile
-                    </a>
-                    <a href="https://learn.microsoft.com/en-gb/training/" target="_blank" class="text-gray-300 hover:text-white transition">
-                        <i class="fas fa-graduation-cap mr-1"></i> Microsoft Learn
-                    </a>
-                </div>
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm text-gray-400">© 2024-2026 Jatin Gupta · Microsoft Learn Showcase</p>
+            <p class="text-xs text-gray-500 mt-1">All achievements and certifications are from official Microsoft Learn profile</p>
+            <div class="flex justify-center gap-4 mt-3">
+                <a href="https://learn.microsoft.com/en-gb/users/JatinGupta-0431" target="_blank" class="text-gray-400 hover:text-white transition text-sm">
+                    <i class="fab fa-microsoft mr-1"></i> Official Profile
+                </a>
+                <a href="https://jatinguptaportfolio.netlify.app/#contact" class="text-gray-400 hover:text-white transition text-sm">
+                    <i class="fas fa-envelope mr-1"></i> Contact
+                </a>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for interactivity -->
     <script>
-        (function() {
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Check for saved theme preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
             
-            // Simple animation for trophy cards on scroll
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('opacity-100', 'translate-y-0');
-                        entry.target.classList.remove('opacity-0', 'translate-y-4');
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            document.querySelectorAll('.trophy-card').forEach(card => {
-                card.classList.add('opacity-0', 'translate-y-4', 'transition-all', 'duration-700');
-                observer.observe(card);
-            });
-            
-            // Profile card hover effect
-            document.querySelectorAll('.trophy-card').forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transition = 'all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)';
-                });
-            });
-            
-            // Dynamic year in footer
-            const yearSpan = document.querySelector('footer .text-gray-400');
-            if (yearSpan) {
-                const currentYear = new Date().getFullYear();
-                yearSpan.innerHTML = yearSpan.innerHTML.replace('2024-2026', `2024-${currentYear}`);
+            // Save preference
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', null);
             }
-        })();
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.add('hidden');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
     </script>
 </body>
 </html>
