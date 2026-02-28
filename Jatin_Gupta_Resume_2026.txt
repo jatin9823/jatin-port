@@ -1,0 +1,511 @@
+\documentclass[a4paper,11pt]{article}
+
+% Package imports
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\usepackage{tabularx} % Required for tables that stretch to page width
+\usepackage{array} % Required for vertical centering in tables
+
+% Color definitions
+\definecolor{darkblue}{RGB}{0,0,139}
+
+% Page layout - reduced margins to save space
+\geometry{left=1.2cm, top=0.6cm, right=1.2cm, bottom=0.8cm}
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{4.08pt}
+
+% Hyperlink setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,
+    urlcolor=darkblue,
+}
+
+% Custom box settings
+\usepackage[most]{tcolorbox}
+\tcbset{
+    frame code={},
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!20,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=-2mm,
+    boxsep=4pt,
+    arc=0pt,outer arc=0pt,
+}
+
+% URL style
+\urlstyle{same}
+
+% Text alignment
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting - reduced spacing
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\circ$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm, itemsep=0.3mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.3mm]}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{1mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+% Commands for icon sizing and positioning
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+\newcommand{\ieeeicon}[1]{\raisebox{-0.3em}{\resizebox{!}{1.3em}{#1}}}
+
+% Font options
+\newcommand{\headerfonti}{\fontfamily{phv}\selectfont} % Helvetica-like (similar to Arial/Calibri)
+\newcommand{\headerfontii}{\fontfamily{ptm}\selectfont} % Times-like (similar to Times New Roman)
+\newcommand{\headerfontiii}{\fontfamily{ppl}\selectfont} % Palatino (elegant serif)
+\newcommand{\headerfontiv}{\fontfamily{pbk}\selectfont} % Bookman (readable serif)
+\newcommand{\headerfontv}{\fontfamily{pag}\selectfont} % Avant Garde-like (similar to Trebuchet MS)
+\newcommand{\headerfontvi}{\fontfamily{cmss}\selectfont} % Computer Modern Sans Serif
+\newcommand{\headerfontvii}{\fontfamily{qhv}\selectfont} % Quasi-Helvetica (another Arial/Calibri alternative)
+\newcommand{\headerfontviii}{\fontfamily{qpl}\selectfont} % Quasi-Palatino (another elegant serif option)
+\newcommand{\headerfontix}{\fontfamily{qtm}\selectfont} % Quasi-Times (another Times New Roman alternative)
+\newcommand{\headerfontx}{\fontfamily{bch}\selectfont} % Charter (clean serif font)
+
+% Define personal information
+% Define personal information
+\newcommand{\name}{Jatin Gupta}
+\newcommand{\tagline}{Full Stack Developer || DevOps}
+\newcommand{\phone}{7392833429}
+\newcommand{\emaila}{official.jatingupta09@gmail.com}
+\newcommand{\github}{Jatin009v}
+\newcommand{\website}{jatinguptaportfolio.netlify.app}
+\newcommand{\linkedin}{jatingupta09}
+\newcommand{\leetcode}{leetcode.com/u/jatin\_009v}
+\begin{document}
+\fontfamily{cmr}\selectfont
+
+%----------HEADING-----------------
+\begin{center}
+\vspace{-4mm}
+\textbf{\LARGE \name}\\
+\vspace{1mm}
+{\large\bfseries\color{darkblue}  Full Stack Developer \& DevOps}\\
+\begin{tabular}{@{}c@{\hspace{2mm}}l@{\hspace{6mm}}c@{\hspace{2mm}}l@{\hspace{6mm}}c@{\hspace{2mm}}l@{}}
+\faEnvelope & \href{mailto:\emaila}{\emaila} & 
+\faLinkedin & \href{https://www.linkedin.com/in/\linkedin}{linkedin.com/in/\linkedin} & 
+\faGithub & \href{https://github.com/\github}{github.com/\github} \\[2mm]
+\faGlobe & \href{https://\website}{\website} & 
+\faCode & \href{https://\leetcode}{\leetcode} & 
+\faPhone & +91-\phone
+\end{tabular}
+\vspace{2mm}
+\end{center}
+
+
+\vspace{-4mm}
+\section{\textbf{Education}}
+\vspace{1mm}
+\setlength{\tabcolsep}{5pt}
+\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
+  \hline
+  \textbf{Degree/Certificate} & \textbf{Institute/Board} & \textbf{CGPA/Percentage} & \textbf{Year} \\
+  \hline
+   MCA & CSJMU & (Pursuing) & 2025 - 2027 \\
+  \hline
+  BCA & CSJMU & 8.20 & 2022 - 2025 \\
+  \hline
+  Intermediate & Kailas Saraswati Inter College Kanpur & 69\% & 2021 - 2022 \\
+  \hline
+  High School & Kailas Saraswati Inter College Kanpur & 77\% & 2019 - 2020 \\
+  \hline
+\end{tabularx}
+\vspace{-4mm}
+
+
+
+
+\section{\textbf{Internship Experience}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+    {Edunet Foundation }{Remote}
+    {Front End Web Development Intern}{Aug 2025 - Sep 2025}
+    \resumeItemListStart
+    
+      \item Built a responsive \textbf{Quiz Application} using \textbf{HTML, CSS, JavaScript} with dynamic question rendering, real-time score tracking, and optimized UI/UX; deployed on Netlify.
+      \hfill \href{https://professional-journey.netlify.app/virtual-internship-7#edunet-internship}{\textbf{Project Link}}
+      
+      \item Scaled the project into an open-source \textbf{real-time Live Quiz Platform} used at Code Vidya (Coding Club) CSJMU, implementing WebSocket-based communication, live leaderboard, timed MCQs, and admin controls.
+      \hfill \href{https://professional-journey.netlify.app/virtual-internship-7#quizzer-project}{\textbf{Extended Version}}
+      
+      \item \textbf{Tech Stack:} React, Vite, TypeScript, Tailwind CSS, FastAPI (Python), Socket.IO, Git, Vercel, Netlify.
+    
+    \resumeItemListEnd
+
+
+
+% \resumeSubheading
+%     {Deloitte Australia (via Forage) [\href{https://www.theforage.com}{\faIcon{globe}}]}{Virtual}
+%     {Data Analytics Simulation}{2025}
+%     \resumeItemListStart
+%       \item Developed Tableau dashboards and performed data cleaning using Excel (\href{https://professional-journey.netlify.app/virtual-internship-5}{Portfolio} | Credential ID: QWjtRix5MYfX8rJoX)
+%     \resumeItemListEnd
+    
+% \resumeSubheading
+%     {ApexPlanet Software Pvt. Ltd. [\href{https://www.apexplanet.in/}{\faIcon{globe}}]}{Remote}
+%     {Web Development Intern (PHP \& MySQL)}{Jul 2025 - Sep 2025}
+%     \resumeItemListStart
+%       \item Built a Digital Wallet System with secure QR-based payment integration using PHP \& MySQL
+%       \item Implemented CRUD operations, role-based access control, SQL injection prevention, and secure sessions
+%       \item Designed responsive UI (login, wallet dashboard, QR scan, transaction history) ensuring smooth UX
+%       \item Project Repo: \href{https://github.com/jatin009v/ApexPlanet-Software-Intenship-Task---Web-Devplopment}{GitHub} | Synopsis: \href{https://drive.google.com/file/d/19ZtmYCv6lNSLYZo-UdFlxYNtT8uBHGQp/view?usp=drive_link}{View PDF}
+%     \resumeItemListEnd
+
+
+
+\resumeSubheading
+    {TechSaksham (Microsoft \& SAP Collaboration)}{Remote}
+    {AI Transformative Learning Intern}{Nov 2024 - Dec 2024}
+    \resumeItemListStart
+      \item Built AI-powered Attendance System using Python, OpenCV, and Geolocation APIs, achieving 98\% recognition accuracy
+      \item Implemented facial recognition authentication and real-time location validation for secure attendance tracking
+      \item Developed admin dashboard with automated reporting features
+      \hfill \href{https://professional-journey.netlify.app/virtual-internship-3}{\textbf{Project Link}}
+    \resumeItemListEnd
+    
+    
+\resumeSubheading
+    {Vital Skills (Associated with Techkriti IIT Kanpur)}{Remote}
+    {Security Research Intern}{Jun 2024 - Jul 2024}
+    \resumeItemListStart
+      \item Explored penetration testing basics using the BadStore vulnerable web application (SQLi, XSS, authentication flaws).
+      \item Documented findings and understood mitigation approaches for common web vulnerabilities.
+      \item Built mini security projects: Network Packet Analyzer, Password Strength Checker, Image Encryption Tool, and basic cryptography implementations.
+      \item Gained practical exposure to Linux, Networking fundamentals (TCP/IP), and security concepts.
+    \resumeItemListEnd
+
+% \resumeSubheading
+%     {Prodigy Infotech [\href{https://www.prodigyinfotech.dev}{\faIcon{globe}}]}{Remote}
+%     {Cybersecurity Intern}{Jul 2024 - Aug 2024}
+%     \resumeItemListStart
+%       \item Developed 5 security tools including Network Packet Analyzer, Image Encryption Tool, and Password Strength Checker
+%       \item Implemented cryptographic algorithms (Caesar Cipher) and ethical keylogger with permission protocols
+%       \item Created Python-based solutions for network analysis and data encryption/decryption
+%       \item Portfolio: \href{https://professional-journey.netlify.app/virtual-internship-1}{All Projects}
+%     \resumeItemListEnd
+    
+
+
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+
+\section{\textbf{Projects}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+% Project 1 - Live Proctoring
+\resumeProject
+    {Live Proctoring System (AI Monitoring)}
+    {Next.js · Node.js · Clerk Auth}
+    {Feb - 2025}
+    {
+        [\href{https://github.com/jatin009v/Online-Live_Proctoring-Examination-Portral}{\textcolor{darkblue}{\faGithub}}]
+        [\href{https://res.cloudinary.com/dheewyygn/video/upload/v1752942117/1728666735531_kztsyr.mp4}{\textcolor{darkblue}{Live Demo}}]
+    }
+    {
+        \begin{itemize}
+            \item Built full-stack application using Next.js \& Node.js with Clerk authentication.
+            \item Designed REST APIs for real-time monitoring and secure session handling.
+            \item Implemented role-based access control for admin \& student dashboards.
+            \item Deployed application with optimized performance and secure routing.
+        \end{itemize}
+    }
+% \resumeItemListStart
+%     \item Developed secure exam portal with real-time AI proctoring (face detection, cheating prevention)
+%     \item Implemented authentication via Clerk and optimized DB operations using Drizzle ORM
+% \resumeItemListEnd
+
+% % Project 2 - Attendance System
+% \resumeProject
+%     {Geo-Location Attendance System (CSJMU Major Project)}
+%     {Python · OpenCV · MySQL · XAMPP · Face Recognition}
+%     {Nov 2024}
+%     {
+%         [\href{https://github.com/jatin9823/Attendance-Management-AICTE-Internship-on-AI-System-using-Face-Recognition-}{\textcolor{darkblue}{\faGithub}}]
+%         [\href{https://drive.google.com/file/d/1SNTV7d0JfSVk4x1JJpJ00e7yQU8j0z5I/view}{\textcolor{darkblue}{Synopsis}}]
+%     }
+% \resumeItemListStart
+%     \item Automated attendance using geofencing and facial recognition technology
+%     \item Secure data storage with MySQL and real-time face detection via OpenCV
+% \resumeItemListEnd
+
+% % Project 3 - Prep-Mitr
+% \resumeProject
+%     {Prep-Mitr (Placement Preparation Portal)}
+%     {React · Node.js · Clerk Auth · Placement Resources}
+%     {Aug 2025}
+%     {
+%         [\href{https://code-vidya-prep-mitr.vercel.app/}{\textcolor{darkblue}{Live Portal}}]
+%     }
+% \resumeItemListStart
+%     \item Centralized platform for CSJMU students with internship/job resources
+%     \item Features ATS resume builder and aptitude preparation materials
+% \resumeItemListEnd
+
+% Additional Projects Link
+\resumeProject
+    {Other Projects}
+    {React.js · AI/ML · Python · Node.js · LLM - RAG }
+    {}
+    {
+        [\href{https://linktr.ee/Jatin_Project}{\textcolor{darkblue}{Click Here}}]
+    }
+\resumeItemListStart
+    \item 
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-8mm}
+
+
+
+
+\section{\textbf{Technical Skills}}
+\resumeHeadingSkillStart
+\resumeSubItem{Programming}{: Python, C++}  
+\resumeSubItem{Frontend}{: JavaScript, React.js, HTML5, CSS3, GSAP, Shadcn ui}
+\resumeSubItem{Backend}{: Node.js, Express.js, REST APIs, JWT and Clerk Authentication}
+\resumeSubItem{Databases}{: SQL, NoSQL, MongoDB, Supabase, Firebase}
+\resumeSubItem{AI \& GenAI}{: Chatbot Development, OpenAI API, Basic RAG, AI Automation }
+\resumeSubItem{DevOps \& Tools}{: Git/GitHub, Docker, Linux, VS Code, CI/CD Basics}
+\resumeHeadingSkillEnd
+
+
+
+
+\section{\textbf{Certifications}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+ \resumePOR
+    {\normalfont Introduction to Cybersecurity - Cisco Networking Academy}
+    {, \href{https://www.credly.com/badges/43085944-547b-4bdc-8f99-58dca7c30c3b/public_url}{View Credential}}
+    {2025}
+\resumePOR
+    {\normalfont Full Stack Development - Sheriyans Coding School}
+    {, \href{https://www.linkedin.com/posts/jatingupta09_exciting-milestone-unlocked-completing-activity-7377175015705862145-rO0B}{View Credential}}
+    {2025}
+\resumePOR
+    {\normalfont Artificial Intelligence Fundamentals - IBM Skill Build}
+    {, \href{https://www.credly.com/badges/3120aa0b-56a4-4a4e-bccf-6b791cfa631b/public_url}{View Credential}}
+    {2025}
+   
+\resumePOR
+    {\normalfont Python for Data Science and AI - IBM \& Coursera}
+    {, \href{https://www.credly.com/badges/857afe8a-d4ef-4743-843f-783ff6c73ef1/public_url}{View Credential}}
+    {2023}
+\resumePOR
+    {\normalfont Introduction to Back-End Development - Meta}
+    {, \href{https://coursera.org/share/bd5ec3f8d4df6e922d3476f28e542f1d}{View Credential}}
+    {2023}
+       \resumePOR
+    {\textbf{More Certifications}}
+    {, \href{https://linktr.ee/jatin009}{View More}}
+    {-}
+
+\resumeSubHeadingListEnd
+\vspace{-4mm}
+
+\section{\textbf{Leadership Roles}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumePOR
+{Secretary – Coding Club | CSJM University | \href{https://professional-journey.netlify.app/work-experience-5}{View Link}}
+{}
+{2025 -- Present}
+
+\resumePOR
+{Event Lead – HackShodh 2026 24'hr Hackathon | CSJM University | \href{https://hackshodh.vercel.app/organizing-committee}{View Link}}
+{}
+{Jan 2026}
+
+% \resumePOR
+% {Community Lead – CSJM University AI Chapter | KanpurAI.Space | \href{https://professional-journey.netlify.app/work-experience-6}{View Link}}
+% {}
+% {Dec 2025 -- Present}
+
+\resumePOR
+{System Support Volunteer – ICPC Kanpur Site | ICPC | \href{https://professional-journey.netlify.app/icpc}{View Link}}
+{}
+{Dec 2025}
+
+\resumePOR
+{Problem Setter \& Web Lead – CS Education Week | CSJM University | \href{https://professional-journey.netlify.app/csedweek}{View Link}}
+{}
+{Dec 2025}
+
+\resumePOR
+{Google Gemini Student Ambassador | Google Developer Program | \href{https://professional-journey.netlify.app/work-experience-8}{View Link}}
+{}
+{2025}
+
+\resumePOR
+{Student Mentor – NSS | CSJM University | \href{https://professional-journey.netlify.app/work-experience-7}{View Link}}
+{}
+{2025}
+
+\resumePOR
+{Technical Head – TechFest 2K24 | UIET CSJMU | \href{https://professional-journey.netlify.app/work-experience-1}{View Link}}
+{}
+{2024}
+
+\resumePOR
+{Technical Member – Code Cluster | UIET CSJMU | \href{https://professional-journey.netlify.app/work-experience-2}{View Link}}
+{}
+{2023}
+
+\resumeSubHeadingListEnd
+\vspace{-4mm}
+%-----------ACHIEVEMENTS-----------------
+
+\section{\textbf{Achievements}}
+\vspace{-0.2mm}
+\resumeSubHeadingListStart
+\resumePOR
+    {Arcade Skill Boost - Earn Skill Badges \& Swag}
+    {, \href{https://jatingcpprofile.netlify.app/}{Profile} | Google Cloud Platform}
+    {2023 – Present}
+    \resumePOR
+    {Azure \& Fabric - Azure AI}
+    {,  \href{https://jatinguptaportfolio.netlify.app/microsoft_jatingupta_0431}{Profile} | Microsoft Learn}
+    {2024 – Present}
+\resumePOR
+    {2nd Runner-up in Web Dev  - Geek-Week Hackathon}
+    {, \href{https://competition-journey.netlify.app/Photos/Certificate.jpeg}{Certificate} | CSJM University}
+    {2023}
+\resumePOR
+    {3rd Rank - District Science Exhibition}
+    {, \href{https://competition-journey.netlify.app/}{View Project} | Pollution Reduction Innovation}
+    {2021}
+
+\resumeSubHeadingListEnd
+\vspace{-4mm}
+
+\section{\textbf{Hackathon Participation}}
+\vspace{-0.2mm}
+\resumeSubHeadingListStart
+\resumePOR
+    {Hackathons to Quizzes - Showcasing My Achievements and Learnings}
+    
+    {\href{https://competition-journey.netlify.app/}{Click Here}}
+\resumeSubHeadingListEnd
+\vspace{-4mm}
+
+\section{\textbf{Open Source Contributions}}
+\vspace{-0.2mm}
+\resumeSubHeadingListStart
+\resumePOR
+    {Active Open Source Contributor}
+    { - \href{https://jatinguptaportfolio.netlify.app/open-source}{Open-Source Portfolio} | \href{https://www.holopin.io/@jatin009v#badges}{Badges}}
+    {2023 - Present}
+    \resumeItemListStart
+        \item Participated in Hacktoberfest consistently since 2023, earning Super Contributor status in 2025
+        \item Contributed 20+ PRs across web development, AI/ML, and documentation projects
+        \item Recognized with Rs.5000 swags and ranked 13 in Hack AI DevFest 2024
+        \item Enhanced multiple projects with UI improvements, backend logic, and feature additions
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-4mm}
+
+
+
+\section{\textbf{Workshops \& Training}}
+\vspace{-0.2mm}
+\resumeSubHeadingListStart
+\resumePOR
+    {Drone Tech \& Robotics Workshop}
+    {, \href{https://professional-journey.netlify.app/workshop-1}{Certificate} | BIAG India \& Kodacy Robotics}
+    {Jan 2023}
+\resumeSubHeadingListEnd
+\vspace{-4mm}
+
+\end{document}
